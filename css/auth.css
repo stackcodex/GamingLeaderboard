@@ -1,0 +1,1537 @@
+/* =========================================
+   GAMECORE AUTH PAGE
+   CLAYMORPHISM + SOFT 3D
+========================================= */
+
+.auth-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,209,102,0.05),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,79,163,0.05),
+            transparent 30%
+        ),
+        #050507;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   AMBIENT LIGHTS
+========================================= */
+
+.ambient {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(110px);
+
+    animation:
+        ambientFloat 8s ease-in-out infinite alternate;
+}
+
+.ambient-gold {
+    width: 380px;
+    height: 380px;
+
+    background: #FFD166;
+
+    top: -200px;
+    left: -160px;
+
+    opacity: 0.15;
+}
+
+.ambient-pink {
+    width: 350px;
+    height: 350px;
+
+    background: #FF4FA3;
+
+    right: -160px;
+    bottom: -180px;
+
+    opacity: 0.13;
+
+    animation-delay: 2s;
+}
+
+.ambient-blue {
+    width: 260px;
+    height: 260px;
+
+    background: #5B8CFF;
+
+    right: 30%;
+    top: 30%;
+
+    opacity: 0.08;
+
+    animation-delay: 4s;
+}
+
+.ambient-green {
+    width: 220px;
+    height: 220px;
+
+    background: #5CFF8A;
+
+    left: 35%;
+    bottom: -100px;
+
+    opacity: 0.05;
+
+    animation-delay: 1s;
+}
+
+
+@keyframes ambientFloat {
+
+    0% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+
+    100% {
+        transform: translate3d(30px,-25px,0) scale(1.08);
+    }
+
+}
+
+
+/* =========================================
+   GRID FLOOR
+========================================= */
+
+.grid-floor {
+    position: absolute;
+
+    width: 100%;
+    height: 50%;
+
+    bottom: -25%;
+
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    transform:
+        perspective(500px)
+        rotateX(65deg);
+
+    mask-image:
+        linear-gradient(
+            to top,
+            black,
+            transparent
+        );
+}
+
+
+/* =========================================
+   FLOATING ORBS
+========================================= */
+
+.floating-orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        orbFloat 6s ease-in-out infinite;
+}
+
+.orb-one {
+    width: 18px;
+    height: 18px;
+
+    left: 9%;
+    top: 30%;
+
+    background: #FFD166;
+
+    box-shadow:
+        0 0 15px #FFD166,
+        0 0 35px rgba(255,209,102,0.5);
+}
+
+.orb-two {
+    width: 12px;
+    height: 12px;
+
+    right: 8%;
+    top: 28%;
+
+    background: #FF4FA3;
+
+    box-shadow:
+        0 0 15px #FF4FA3,
+        0 0 30px rgba(255,79,163,0.5);
+
+    animation-delay: 1.5s;
+}
+
+.orb-three {
+    width: 9px;
+    height: 9px;
+
+    left: 45%;
+    top: 12%;
+
+    background: #5B8CFF;
+
+    box-shadow:
+        0 0 15px #5B8CFF;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* =========================================
+   FLOATING RINGS
+========================================= */
+
+.floating-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    pointer-events: none;
+
+    animation:
+        ringFloat 12s linear infinite;
+}
+
+.ring-one {
+    width: 160px;
+    height: 160px;
+
+    left: 3%;
+    bottom: 10%;
+}
+
+.ring-two {
+    width: 100px;
+    height: 100px;
+
+    right: 4%;
+    top: 18%;
+
+    animation-direction: reverse;
+}
+
+
+@keyframes ringFloat {
+
+    from {
+        transform:
+            rotate(0deg)
+            translateY(0);
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            translateY(-20px);
+    }
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.auth-navbar {
+    height: 82px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 20;
+
+    background: rgba(5,5,7,0.55);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.auth-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   SATURN
+========================================= */
+
+.saturn-logo {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saturn-planet {
+    width: 23px;
+    height: 23px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fff7c7,
+            #FFD166 45%,
+            #b57916
+        );
+
+    box-shadow:
+        0 0 12px rgba(255,209,102,0.9),
+        0 0 28px rgba(255,209,102,0.3);
+}
+
+.saturn-planet span {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.7);
+
+    top: 5px;
+    left: 7px;
+}
+
+.saturn-ring {
+    position: absolute;
+
+    width: 43px;
+    height: 14px;
+
+    border:
+        2px solid #FFD166;
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+
+    box-shadow:
+        0 0 8px rgba(255,209,102,0.5);
+}
+
+
+/* =========================================
+   BACK HOME
+========================================= */
+
+.back-home {
+    color: #888;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    color: #FFD166;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.auth-main {
+    min-height: calc(100vh - 82px);
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 50px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        460px;
+
+    align-items: center;
+
+    gap: 70px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.auth-visual {
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+}
+
+.visual-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 520px;
+}
+
+.live-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(92,255,138,0.07);
+
+    border:
+        1px solid rgba(92,255,138,0.2);
+
+    color: #5CFF8A;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.live-badge span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #5CFF8A;
+
+    box-shadow:
+        0 0 10px #5CFF8A;
+
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+
+}
+
+
+.visual-content h1 {
+    margin-top: 25px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.5);
+}
+
+.visual-content h1 span {
+    color: #FFD166;
+
+    text-shadow:
+        0 0 30px rgba(255,209,102,0.25);
+}
+
+.visual-content p {
+    margin-top: 25px;
+
+    max-width: 480px;
+
+    color: #85858f;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   3D CORE SCENE
+========================================= */
+
+.core-scene {
+    position: absolute;
+
+    right: -30px;
+    bottom: 10px;
+
+    width: 390px;
+    height: 390px;
+
+    perspective: 800px;
+}
+
+.core {
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(12deg)
+        rotateY(-15deg);
+
+    border-radius: 38%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #30303a,
+            #111116
+        );
+
+    box-shadow:
+        25px 25px 45px rgba(0,0,0,0.7),
+        -10px -10px 25px rgba(255,255,255,0.04),
+        inset 2px 2px 5px rgba(255,255,255,0.08),
+        0 0 45px rgba(255,209,102,0.15);
+
+    animation:
+        coreFloat 4s ease-in-out infinite;
+}
+
+.core::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border-radius: 32%;
+
+    border:
+        1px solid rgba(255,209,102,0.25);
+
+    box-shadow:
+        inset 0 0 25px rgba(255,209,102,0.08);
+}
+
+.core-inner {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 17px;
+
+    color: #FFD166;
+
+    letter-spacing: 2px;
+}
+
+.core-glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background: #FFD166;
+
+    filter: blur(70px);
+
+    opacity: 0.08;
+}
+
+@keyframes coreFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%,-50%)
+            rotateX(12deg)
+            rotateY(-15deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translate(-50%,-50%)
+            rotateX(18deg)
+            rotateY(10deg)
+            translateY(-14px);
+    }
+
+}
+
+
+/* =========================================
+   CORE ORBITS
+========================================= */
+
+.core-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,209,102,0.22);
+
+    transform-style: preserve-3d;
+}
+
+.orbit-one {
+    width: 250px;
+    height: 90px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(68deg);
+
+    animation:
+        orbitSpin 8s linear infinite;
+}
+
+.orbit-two {
+    width: 310px;
+    height: 120px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateY(70deg);
+
+    border-color:
+        rgba(255,79,163,0.18);
+
+    animation:
+        orbitSpinReverse 12s linear infinite;
+}
+
+.orbit-three {
+    width: 350px;
+    height: 160px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(65deg)
+        rotateY(25deg);
+
+    border-color:
+        rgba(91,140,255,0.15);
+
+    animation:
+        orbitSpin 16s linear infinite;
+}
+
+
+@keyframes orbitSpin {
+
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+
+}
+
+@keyframes orbitSpinReverse {
+
+    from {
+        rotate: 360deg;
+    }
+
+    to {
+        rotate: 0deg;
+    }
+
+}
+
+
+/* =========================================
+   FLOATING SCORE CARDS
+========================================= */
+
+.float-card {
+    position: absolute;
+
+    padding: 13px 17px;
+
+    min-width: 120px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,35,43,0.95),
+            rgba(14,14,19,0.95)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        12px 15px 30px rgba(0,0,0,0.5),
+        -5px -5px 15px rgba(255,255,255,0.02);
+
+    backdrop-filter: blur(12px);
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+}
+
+.float-card small {
+    display: block;
+
+    color: #70707b;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.float-card strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 17px;
+}
+
+.float-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #5CFF8A;
+
+    font-size: 9px;
+}
+
+.card-score {
+    top: 40px;
+    right: 5px;
+}
+
+.card-rank {
+    bottom: 40px;
+    left: 0;
+
+    animation-delay: 1s;
+}
+
+.card-rank strong {
+    color: #FFD166;
+}
+
+.card-games {
+    top: 125px;
+    left: -15px;
+
+    animation-delay: 2s;
+}
+
+.card-games strong {
+    color: #FF4FA3;
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotateZ(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotateZ(1deg);
+    }
+
+}
+
+
+/* =========================================
+   AUTH CARD
+========================================= */
+
+.auth-section {
+    position: relative;
+}
+
+.auth-card {
+    width: 100%;
+
+    padding: 38px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(29,29,37,0.94),
+            rgba(12,12,17,0.97)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        22px 25px 50px rgba(0,0,0,0.6),
+        -10px -10px 30px rgba(255,255,255,0.025),
+        0 0 70px rgba(255,209,102,0.05);
+
+    animation:
+        authAppear 0.8s ease both;
+}
+
+@keyframes authAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            rotateX(8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            rotateX(0);
+    }
+
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.auth-card-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.auth-icon {
+    width: 55px;
+    height: 55px;
+
+    position: relative;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #292932,
+            #101015
+        );
+
+    box-shadow:
+        8px 8px 18px rgba(0,0,0,0.5),
+        inset -2px -2px 5px rgba(0,0,0,0.5);
+
+    border:
+        1px solid rgba(255,209,102,0.2);
+}
+
+.user-head {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #FFD166;
+
+    left: 50%;
+    top: 13px;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 10px rgba(255,209,102,0.4);
+}
+
+.user-body {
+    position: absolute;
+
+    width: 28px;
+    height: 14px;
+
+    border-radius: 14px 14px 7px 7px;
+
+    background: #FFD166;
+
+    left: 50%;
+    bottom: 10px;
+
+    transform: translateX(-50%);
+}
+
+.auth-label {
+    color: #777780;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+.auth-card h2 {
+    margin-top: 3px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+}
+
+.auth-description {
+    margin:
+        18px 0 27px;
+
+    color: #85858f;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #b4b4bc;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.input-box {
+    height: 51px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    border-radius: 14px;
+
+    background: #0a0a0e;
+
+    border:
+        1px solid #272731;
+
+    transition: 0.3s;
+
+    box-shadow:
+        inset 3px 3px 8px rgba(0,0,0,0.5),
+        inset -2px -2px 5px rgba(255,255,255,0.015);
+}
+
+.input-box:focus-within {
+    border-color: #FFD166;
+
+    box-shadow:
+        0 0 0 3px rgba(255,209,102,0.06),
+        0 0 22px rgba(255,209,102,0.07),
+        inset 3px 3px 8px rgba(0,0,0,0.5);
+}
+
+.input-symbol {
+    width: 43px;
+
+    text-align: center;
+
+    color: #666670;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+.input-box input {
+    flex: 1;
+
+    height: 100%;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: #fff;
+
+    padding-right: 12px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+}
+
+.input-box input::placeholder {
+    color: #55555f;
+}
+
+.password-toggle {
+    margin-right: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777780;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: #FFD166;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.form-options {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin:
+        3px 0 23px;
+
+    font-size: 10px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #777780;
+
+    cursor: pointer;
+}
+
+.remember input {
+    accent-color: #FFD166;
+}
+
+.forgot {
+    color: #FFD166;
+
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   SIGN IN BUTTON
+========================================= */
+
+.primary-auth-btn {
+    width: 100%;
+    height: 53px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    cursor: pointer;
+
+    color: #090909;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFE08A,
+            #FFD166,
+            #d99c28
+        );
+
+    box-shadow:
+        0 10px 25px rgba(255,209,102,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+
+    transition: 0.3s;
+}
+
+.primary-auth-btn b {
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.primary-auth-btn:hover {
+    transform:
+        translateY(-3px)
+        scale(1.01);
+
+    box-shadow:
+        0 15px 35px rgba(255,209,102,0.3),
+        0 0 30px rgba(255,209,102,0.1);
+}
+
+.primary-auth-btn:hover b {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.auth-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0 17px;
+
+    color: #4f4f58;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.auth-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #25252d;
+}
+
+
+/* =========================================
+   CREATE ACCOUNT
+========================================= */
+
+.create-account-btn {
+    width: 100%;
+    height: 50px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid rgba(255,79,163,0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,79,163,0.08),
+            rgba(255,79,163,0.025)
+        );
+
+    color: #FF4FA3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        6px 8px 15px rgba(0,0,0,0.3);
+}
+
+.create-account-btn:hover {
+    transform: translateY(-3px);
+
+    border-color: #FF4FA3;
+
+    background:
+        rgba(255,79,163,0.12);
+
+    box-shadow:
+        0 10px 25px rgba(255,79,163,0.12),
+        inset 0 0 15px rgba(255,79,163,0.04);
+}
+
+.plus-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FF4FA3;
+
+    color: #fff;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 0 12px rgba(255,79,163,0.35);
+}
+
+
+/* =========================================
+   GUEST
+========================================= */
+
+.guest-btn {
+    width: 100%;
+    height: 44px;
+
+    margin-top: 10px;
+
+    border-radius: 13px;
+
+    border:
+        1px solid #25252d;
+
+    background: #101015;
+
+    color: #777780;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.guest-btn:hover {
+    color: #fff;
+
+    border-color: #5B8CFF;
+
+    background: #14141b;
+}
+
+
+/* =========================================
+   SECURE TEXT
+========================================= */
+
+.secure-text {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #4e4e57;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .auth-main {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+    .auth-visual {
+        min-height: 330px;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .visual-content {
+        margin: auto;
+    }
+
+    .visual-content h1 {
+        font-size: 48px;
+    }
+
+    .visual-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .core-scene {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .auth-navbar {
+        padding: 0 20px;
+    }
+
+    .auth-main {
+        padding:
+            35px 18px 50px;
+    }
+
+    .auth-visual {
+        min-height: auto;
+    }
+
+    .visual-content h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+    .visual-content p {
+        font-size: 13px;
+    }
+
+    .auth-card {
+        padding: 27px 20px;
+
+        border-radius: 24px;
+    }
+
+    .back-home {
+        font-size: 11px;
+    }
+
+    .auth-brand {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================================
+   REGISTER PAGE
+========================================= */
+
+.terms {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.terms span {
+    color: #777780;
+    font-size: 9px;
+}
+
+.terms input {
+    flex-shrink: 0;
+}
+
+.register-submit {
+    margin-top: 2px;
+}
+
+.signin-secondary {
+    color: #5B8CFF;
+    border-color: rgba(91,140,255,0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(91,140,255,0.08),
+            rgba(91,140,255,0.02)
+        );
+}
+
+.signin-secondary:hover {
+    color: #fff;
+    border-color: #5B8CFF;
+
+    background:
+        rgba(91,140,255,0.12);
+
+    box-shadow:
+        0 10px 25px rgba(91,140,255,0.12);
+}

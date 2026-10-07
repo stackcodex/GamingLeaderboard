@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <!-- BACKGROUND 3D ELEMENTS -->
+
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-pink"></div>
+    <div class="ambient ambient-blue"></div>
+    <div class="ambient ambient-green"></div>
+
+    <div class="grid-floor"></div>
+
+    <div class="floating-orb orb-one"></div>
+    <div class="floating-orb orb-two"></div>
+    <div class="floating-orb orb-three"></div>
+
+    <div class="floating-ring ring-one"></div>
+    <div class="floating-ring ring-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="auth-navbar">
+
+        <a href="index.html" class="auth-brand">
+
+            <div class="saturn-logo">
+
+                <div class="saturn-ring"></div>
+
+                <div class="saturn-planet">
+                    <span></span>
+                </div>
+
+            </div>
+
+            <span>GAMECORE</span>
+
+        </a>
+
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="auth-main">
+
+
+        <!-- LEFT 3D VISUAL -->
+
+        <section class="auth-visual">
+
+            <div class="visual-content">
+
+                <div class="live-badge">
+                    <span></span>
+                    LIVE GAMING NETWORK
+                </div>
+
+                <h1>
+                    PLAY.
+                    <br>
+                    <span>COMPETE.</span>
+                    <br>
+                    DOMINATE.
+                </h1>
+
+                <p>
+                    Sign in to track your scores, climb the
+                    leaderboard and prove you're among the best.
+                </p>
+
+            </div>
+
+
+            <!-- 3D CORE -->
+
+            <div class="core-scene">
+
+                <div class="core-orbit orbit-one"></div>
+                <div class="core-orbit orbit-two"></div>
+                <div class="core-orbit orbit-three"></div>
+
+                <div class="core-glow"></div>
+
+                <div class="core">
+
+                    <div class="core-inner">
+                        GAME
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING SCORE CARDS -->
+
+                <div class="float-card card-score">
+
+                    <small>HIGH SCORE</small>
+
+                    <strong>98,420</strong>
+
+                    <span>↑ 12.8%</span>
+
+                </div>
+
+
+                <div class="float-card card-rank">
+
+                    <small>GLOBAL RANK</small>
+
+                    <strong>#01</strong>
+
+                    <span>ELITE PLAYER</span>
+
+                </div>
+
+
+                <div class="float-card card-games">
+
+                    <small>GAMES</small>
+
+                    <strong>10</strong>
+
+                    <span>ACTIVE</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+
+                <!-- CARD TOP -->
+
+                <div class="auth-card-top">
+
+                    <div class="auth-icon">
+
+                        <div class="user-head"></div>
+                        <div class="user-body"></div>
+
+                    </div>
+
+                    <div>
+
+                        <span class="auth-label">
+                            PLAYER ACCESS
+                        </span>
+
+                        <h2>
+                            SIGN IN
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="auth-description">
+                    Welcome back, champion. Enter your
+                    credentials to continue.
+                </p>
+
+
+                <!-- FORM -->
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                @
+                            </span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            PASSWORD
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                •
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle">
+
+                                SHOW
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="form-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                        <a href="#" class="forgot">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- SIGN IN -->
+
+                    <button
+                        type="submit"
+                        class="primary-auth-btn">
+
+                        <span>
+                            SIGN IN
+                        </span>
+
+                        <b>→</b>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- DIVIDER -->
+
+                <div class="auth-divider">
+
+                    <span></span>
+                    OR
+                    <span></span>
+
+                </div>
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <button
+                    class="create-account-btn"
+                    id="createAccountBtn">
+
+                    <span class="plus-icon">
+                        +
+                    </span>
+
+                    <span>
+                        CREATE ACCOUNT
+                    </span>
+
+                </button>
+
+
+                <!-- GUEST -->
+
+                <button
+                    class="guest-btn"
+                    id="guestBtn">
+
+                    CONTINUE AS GUEST
+
+                </button>
+
+
+                <p class="secure-text">
+                    🔒 Your account information is securely protected.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

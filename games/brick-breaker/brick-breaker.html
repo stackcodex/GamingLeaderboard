@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brick Breaker | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="brick-breaker.css">
+</head>
+
+<body>
+
+<nav class="game-nav">
+
+    <a href="../../index.html" class="brand">
+
+        <span class="saturn-logo">
+            <span class="planet"></span>
+            <span class="ring"></span>
+        </span>
+
+        <span>GAMECORE</span>
+
+    </a>
+
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../games.html">Games</a>
+        <a href="../../leaderboard.html">Leaderboard</a>
+        <a href="../../profile.html">Profile</a>
+    </div>
+
+</nav>
+
+
+<main class="brick-page">
+
+    <!-- HEADER -->
+
+    <section class="game-header">
+
+        <div>
+
+            <div class="game-label">
+                <span class="live-dot"></span>
+                PLAYABLE GAME
+            </div>
+
+            <h1>
+                BRICK <span>BREAKER</span>
+            </h1>
+
+            <p>
+                Break every brick, keep the ball alive and achieve
+                the highest score before you lose all your lives.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="restart-btn"
+            onclick="restartGame()"
+        >
+            ↻ RESTART
+        </button>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="brick-stats">
+
+        <div class="stat-box">
+            <span>SCORE</span>
+            <strong id="score">0</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>HIGH SCORE</span>
+            <strong id="highScore">0</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>LEVEL</span>
+            <strong id="level">1</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>LIVES</span>
+            <strong id="lives">3</strong>
+        </div>
+
+    </section>
+
+
+    <!-- GAME + SIDE PANEL -->
+
+    <section class="brick-layout">
+
+        <!-- GAME BOARD -->
+
+        <div class="game-board-wrapper">
+
+            <canvas
+                id="gameCanvas"
+                width="760"
+                height="560"
+            ></canvas>
+
+
+            <!-- START OVERLAY -->
+
+            <div
+                id="startOverlay"
+                class="game-overlay"
+            >
+
+                <div class="overlay-content">
+
+                    <div class="brick-icon">▦</div>
+
+                    <h2>READY?</h2>
+
+                    <p>
+                        Move the paddle and destroy every brick.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="startGame()"
+                    >
+                        START GAME
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- GAME OVER -->
+
+            <div
+                id="gameOverOverlay"
+                class="game-overlay hidden"
+            >
+
+                <div class="overlay-content">
+
+                    <div class="gameover-icon">×</div>
+
+                    <h2>GAME OVER</h2>
+
+                    <p>
+                        You ran out of lives.
+                    </p>
+
+                    <div class="final-score">
+
+                        <span>FINAL SCORE</span>
+
+                        <strong id="finalScore">0</strong>
+
+                    </div>
+
+                    <div class="overlay-buttons">
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            onclick="restartGame()"
+                        >
+                            PLAY AGAIN
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            onclick="submitScore()"
+                        >
+                            SUBMIT SCORE
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WIN -->
+
+            <div
+                id="winOverlay"
+                class="game-overlay hidden"
+            >
+
+                <div class="overlay-content">
+
+                    <div class="win-icon">★</div>
+
+                    <h2>BOARD CLEARED</h2>
+
+                    <p>
+                        Every brick has been destroyed.
+                    </p>
+
+                    <div class="final-score">
+
+                        <span>FINAL SCORE</span>
+
+                        <strong id="winScore">0</strong>
+
+                    </div>
+
+                    <div class="overlay-buttons">
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            onclick="restartGame()"
+                        >
+                            PLAY AGAIN
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            onclick="submitScore()"
+                        >
+                            SUBMIT SCORE
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDE PANEL -->
+
+        <aside class="brick-side">
+
+            <!-- CONTROLS -->
+
+            <div class="info-card">
+
+                <h3>CONTROLS</h3>
+
+                <div class="control-row">
+                    <span>← →</span>
+                    <p>Move paddle</p>
+                </div>
+
+                <div class="control-row">
+                    <span>A D</span>
+                    <p>Move paddle</p>
+                </div>
+
+                <div class="control-row">
+                    <span>SPACE</span>
+                    <p>Launch ball</p>
+                </div>
+
+            </div>
+
+
+            <!-- SCORING -->
+
+            <div class="info-card">
+
+                <h3>SCORING</h3>
+
+                <div class="score-rule">
+                    <span>Normal Brick</span>
+                    <strong>+50</strong>
+                </div>
+
+                <div class="score-rule">
+                    <span>Strong Brick</span>
+                    <strong>+100</strong>
+                </div>
+
+                <div class="score-rule">
+                    <span>Level Clear</span>
+                    <strong>+500</strong>
+                </div>
+
+            </div>
+
+
+            <!-- OBJECTIVE -->
+
+            <div class="info-card objective-card">
+
+                <div class="objective-icon">◆</div>
+
+                <div>
+
+                    <h3>OBJECTIVE</h3>
+
+                    <p>
+                        Destroy all bricks while keeping the
+                        ball in play.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<!-- SCORE RESULT MODAL -->
+
+<div
+    class="score-result-modal hidden"
+    id="scoreResultModal"
+>
+
+    <div class="score-result-card">
+
+        <div class="success-icon">
+            <span>✓</span>
+        </div>
+
+        <span
+            class="result-status"
+            id="scoreResultStatus"
+        >
+            NEW BEST SCORE
+        </span>
+
+        <h2>RUN COMPLETE</h2>
+
+        <div class="result-game-name">
+            BRICK BREAKER
+        </div>
+
+        <div class="result-score-box">
+
+            <span>YOUR SCORE</span>
+
+            <strong id="submittedScore">0</strong>
+
+        </div>
+
+        <p id="scoreResultMessage">
+            Your score has been added to the GAMECORE leaderboard.
+        </p>
+
+        <div class="result-actions">
+
+            <button
+                type="button"
+                id="viewLeaderboardBtn"
+                class="result-primary-btn"
+            >
+                VIEW LEADERBOARD
+            </button>
+
+            <button
+                type="button"
+                id="closeResultBtn"
+                class="result-secondary-btn"
+            >
+                DONE
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT: SCRIPT AFTER SCORE MODAL -->
+
+<script src="brick-breaker.js"></script>
+
+</body>
+</html>

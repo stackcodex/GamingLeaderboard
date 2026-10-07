@@ -1,0 +1,1416 @@
+/* =========================================
+   PROFILE PAGE
+========================================= */
+
+.profile-page {
+    width: min(1250px, 92%);
+    margin: 0 auto;
+    padding: 55px 0 90px;
+}
+
+
+/* =========================================
+   PROFILE HERO
+========================================= */
+
+.profile-hero {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding: 40px;
+
+    background: linear-gradient(
+        145deg,
+        #15151c,
+        #0c0c11
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        15px 15px 35px rgba(0, 0, 0, 0.45),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.025);
+}
+
+.profile-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -100px;
+    top: -150px;
+
+    background: rgba(255, 209, 102, 0.12);
+
+    filter: blur(80px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PROFILE AVATAR
+========================================= */
+
+.profile-avatar-wrap {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    flex-shrink: 0;
+}
+
+.profile-avatar {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 42%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #fff0a0,
+            transparent 22%
+        ),
+        linear-gradient(
+            145deg,
+            #735b20,
+            #18140a
+        );
+
+    border: 2px solid var(--gold);
+
+    box-shadow:
+        0 0 35px rgba(255, 209, 102, 0.3),
+        inset 8px 8px 18px rgba(255, 255, 255, 0.1),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.55);
+
+    animation: avatarFloat 4s ease-in-out infinite;
+}
+
+@keyframes avatarFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.profile-helmet {
+    position: absolute;
+
+    width: 75%;
+    height: 35%;
+
+    left: 12.5%;
+    top: 5%;
+
+    border-radius: 50% 50% 20% 20%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1a0,
+            #b88724
+        );
+
+    z-index: 4;
+}
+
+.profile-avatar::after {
+    content: "";
+
+    position: absolute;
+
+    width: 68%;
+    height: 68%;
+
+    left: 16%;
+    top: 18%;
+
+    border-radius: 45% 45% 40% 40%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #efb48c,
+            #a75d4b
+        );
+
+    z-index: 2;
+
+    box-shadow:
+        inset 5px 5px 12px rgba(255, 255, 255, 0.15),
+        inset -5px -6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile-eye {
+    position: absolute;
+
+    width: 14px;
+    height: 9px;
+
+    top: 49%;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 6;
+
+    box-shadow: 0 0 8px white;
+}
+
+.profile-eye::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 7px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #111;
+}
+
+.profile-avatar .eye-left {
+    left: 30%;
+}
+
+.profile-avatar .eye-right {
+    right: 30%;
+}
+
+.profile-mouth {
+    position: absolute;
+
+    width: 30px;
+    height: 9px;
+
+    left: 50%;
+    top: 69%;
+
+    transform: translateX(-50%);
+
+    background: #000;
+
+    border-radius: 0 0 12px 12px;
+
+    z-index: 7;
+}
+
+.online-dot {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    right: 5px;
+    bottom: 8px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    border: 4px solid #101016;
+
+    box-shadow:
+        0 0 15px rgba(92, 255, 138, 0.7);
+}
+
+
+/* =========================================
+   PROFILE INFO
+========================================= */
+
+.profile-info {
+    position: relative;
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.profile-badge {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 209, 102, 0.1);
+
+    border: 1px solid rgba(255, 209, 102, 0.25);
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.profile-info h1 {
+    margin: 10px 0 5px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(32px, 5vw, 55px);
+
+    letter-spacing: 4px;
+
+    word-break: break-word;
+}
+
+.profile-tag {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.profile-meta {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 18px;
+
+    color: #aaa;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    flex-wrap: wrap;
+}
+
+.online-text {
+    color: var(--green);
+}
+
+
+/* =========================================
+   PROFILE ACTIONS
+========================================= */
+
+.profile-actions {
+    margin-left: auto;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 15px;
+}
+
+.account-status {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 13px;
+
+    background: rgba(92, 255, 138, 0.06);
+
+    border: 1px solid rgba(92, 255, 138, 0.15);
+
+    border-radius: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px rgba(92, 255, 138, 0.8);
+}
+
+.account-status div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.account-status strong {
+    color: var(--green);
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+}
+
+.account-status span:not(.status-dot) {
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+.logout-btn {
+    padding: 12px 20px;
+
+    background: rgba(255, 79, 163, 0.06);
+
+    border: 1px solid rgba(255, 79, 163, 0.25);
+
+    border-radius: 10px;
+
+    color: var(--pink);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 79, 163, 0.12);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 22px rgba(255, 79, 163, 0.18);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ACCOUNT DETAILS
+========================================= */
+
+.account-details-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-top: 22px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.account-detail {
+    padding: 19px 20px;
+
+    background: #0d0d12;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.detail-label {
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.account-detail strong {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.active-status {
+    color: var(--green);
+}
+
+
+/* =========================================
+   XP
+========================================= */
+
+.xp-section {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    background: #0d0d12;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 20px;
+}
+
+.xp-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+.xp-header > div:first-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.xp-label {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+}
+
+.xp-header strong {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 14px;
+}
+
+.xp-value {
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.xp-bar {
+    width: 100%;
+    height: 9px;
+
+    background: #08080c;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.xp-progress {
+    width: 0;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            #fff0a0
+        );
+
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 15px rgba(255, 209, 102, 0.4);
+
+    transition: width 1.2s ease;
+}
+
+.xp-next {
+    margin: 10px 0 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.profile-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 22px;
+}
+
+.profile-stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    background: #111117;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 18px;
+
+    box-shadow:
+        8px 8px 20px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+}
+
+.profile-stat:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.stat-icon {
+    font-size: 25px;
+}
+
+.profile-stat div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+.profile-stat span:not(.stat-icon) {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.profile-stat strong {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 17px;
+
+    white-space: nowrap;
+}
+
+.gold-stat .stat-icon,
+.gold-stat strong {
+    color: var(--gold);
+}
+
+.pink-stat .stat-icon,
+.pink-stat strong {
+    color: var(--pink);
+}
+
+.green-stat .stat-icon,
+.green-stat strong {
+    color: var(--green);
+}
+
+.blue-stat .stat-icon,
+.blue-stat strong {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 0.75fr;
+
+    gap: 22px;
+
+    margin-top: 22px;
+}
+
+.profile-card {
+    padding: 27px;
+
+    background: #101016;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 22px;
+
+    box-shadow:
+        10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-label {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+}
+
+.card-header h2,
+.section-heading h2 {
+    margin: 5px 0 0;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 18px;
+}
+
+.card-header select {
+    padding: 9px 12px;
+
+    background: #08080d;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 8px;
+
+    color: white;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SCORE HISTORY
+========================================= */
+
+.history-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.history-row {
+    display: grid;
+
+    grid-template-columns:
+        45px 1fr auto;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    animation: historyAppear 0.4s ease both;
+}
+
+@keyframes historyAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history-row:last-child {
+    border-bottom: none;
+}
+
+.history-game {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.game-gold {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--gold);
+}
+
+.game-blue {
+    background: rgba(91, 140, 255, 0.12);
+    color: var(--blue);
+}
+
+.game-pink {
+    background: rgba(255, 79, 163, 0.12);
+    color: var(--pink);
+}
+
+.game-green {
+    background: rgba(92, 255, 138, 0.12);
+    color: var(--green);
+}
+
+.game-purple {
+    background: rgba(154, 108, 255, 0.12);
+    color: #9a6cff;
+}
+
+.history-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.history-details strong {
+    font-size: 12px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.history-details span {
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.history-score {
+    color: var(--green);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.empty-history {
+    padding: 35px 10px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BEST SCORES
+========================================= */
+
+.best-game {
+    display: grid;
+
+    grid-template-columns:
+        28px 42px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    animation: historyAppear 0.4s ease both;
+}
+
+.best-game:last-child {
+    border-bottom: none;
+}
+
+.best-rank {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.best-game-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.best-game-icon.gold {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--gold);
+}
+
+.best-game-icon.blue {
+    background: rgba(91, 140, 255, 0.12);
+    color: var(--blue);
+}
+
+.best-game-icon.pink {
+    background: rgba(255, 79, 163, 0.12);
+    color: var(--pink);
+}
+
+.best-game-icon.green {
+    background: rgba(92, 255, 138, 0.12);
+    color: var(--green);
+}
+
+.best-game-icon.purple {
+    background: rgba(154, 108, 255, 0.12);
+    color: #9a6cff;
+}
+
+.best-game-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.best-game-info strong {
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.best-game-info span {
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+.best-game > b {
+    color: var(--gold);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   ACHIEVEMENTS
+========================================= */
+
+.achievements-section {
+    margin-top: 25px;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 18px;
+}
+
+.achievement-count {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.achievements-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 13px;
+}
+
+.achievement {
+    padding: 22px 12px;
+
+    text-align: center;
+
+    background: #101016;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 17px;
+
+    transition: 0.3s;
+}
+
+.achievement:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.achievement-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin: 0 auto 12px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+}
+
+.achievement strong {
+    display: block;
+
+    font-size: 10px;
+}
+
+.achievement span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+.achievement.gold .achievement-icon {
+    color: var(--gold);
+    background: rgba(255, 209, 102, 0.1);
+}
+
+.achievement.pink .achievement-icon {
+    color: var(--pink);
+    background: rgba(255, 79, 163, 0.1);
+}
+
+.achievement.green .achievement-icon {
+    color: var(--green);
+    background: rgba(92, 255, 138, 0.1);
+}
+
+.achievement.blue .achievement-icon {
+    color: var(--blue);
+    background: rgba(91, 140, 255, 0.1);
+}
+
+.achievement.locked {
+    opacity: 0.35;
+}
+
+.achievement.unlocked {
+    opacity: 1;
+
+    border-color: rgba(255, 209, 102, 0.15);
+
+    box-shadow:
+        0 0 20px rgba(255, 209, 102, 0.04);
+}
+
+
+/* =========================================
+   LOGOUT MODAL
+========================================= */
+
+.logout-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(10px);
+}
+
+.logout-modal.hidden {
+    display: none;
+}
+
+.logout-modal-content {
+    width: min(420px, 100%);
+
+    padding: 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17171f,
+            #0b0b10
+        );
+
+    border: 1px solid rgba(255, 79, 163, 0.18);
+
+    border-radius: 24px;
+
+    box-shadow:
+        20px 20px 50px rgba(0, 0, 0, 0.55),
+        0 0 50px rgba(255, 79, 163, 0.08);
+
+    animation: modalAppear 0.25s ease;
+}
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.94) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.logout-icon {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 79, 163, 0.1);
+
+    border: 1px solid rgba(255, 79, 163, 0.25);
+
+    color: var(--pink);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logout-modal-content h2 {
+    margin: 8px 0;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 22px;
+}
+
+.logout-modal-content p {
+    margin: 0 auto 25px;
+
+    max-width: 310px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.logout-actions {
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+}
+
+.logout-actions button {
+    min-width: 120px;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cancel-logout {
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+}
+
+.cancel-logout:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.confirm-logout {
+    background: rgba(255, 79, 163, 0.1);
+
+    border: 1px solid rgba(255, 79, 163, 0.3);
+
+    color: var(--pink);
+}
+
+.confirm-logout:hover {
+    background: rgba(255, 79, 163, 0.18);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 20px rgba(255, 79, 163, 0.15);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .profile-hero {
+        flex-wrap: wrap;
+    }
+
+    .profile-actions {
+        margin-left: auto;
+    }
+
+    .account-details-card {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .achievements-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .profile-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .profile-page {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .profile-hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    .profile-meta {
+        justify-content: center;
+    }
+
+    .profile-actions {
+        width: 100%;
+
+        margin: 5px 0 0;
+
+        align-items: center;
+    }
+
+    .account-status {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .account-details-card {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .xp-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .card-header {
+        align-items: flex-start;
+
+        gap: 10px;
+
+        flex-direction: column;
+    }
+
+    .history-row {
+        grid-template-columns:
+            40px 1fr auto;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .profile-card {
+        padding: 20px 15px;
+    }
+
+    .history-score {
+        font-size: 9px;
+    }
+
+    .best-game {
+        grid-template-columns:
+            24px 38px 1fr auto;
+
+        gap: 8px;
+    }
+
+    .best-game-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logout-modal-content {
+        padding: 28px 20px;
+    }
+
+    .logout-actions {
+        flex-direction: column;
+    }
+
+    .logout-actions button {
+        width: 100%;
+    }
+}

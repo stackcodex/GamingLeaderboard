@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Space Shooter | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="space-shooter.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="game-navbar">
+
+        <a href="../../index.html" class="brand">
+
+            <div class="saturn-logo">
+                <div class="saturn-planet"></div>
+                <div class="saturn-ring"></div>
+            </div>
+
+            <span>GAMECORE</span>
+
+        </a>
+
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <a href="../../games.html">Games</a>
+            <a href="../../leaderboard.html">Leaderboard</a>
+            <a href="../../profile.html">Profile</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="space-page">
+
+        <!-- HEADER -->
+        <section class="game-header">
+
+            <div class="game-label">
+                <span class="live-dot"></span>
+                PLAYABLE GAME
+            </div>
+
+            <h1>
+                SPACE <span>SHOOTER</span>
+            </h1>
+
+            <p>
+                Defend the galaxy, destroy enemy ships and survive
+                as long as possible to achieve the highest score.
+            </p>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="game-stats">
+
+            <div class="stat-card">
+                <span class="stat-label">SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">HIGH SCORE</span>
+                <strong id="highScore">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">LEVEL</span>
+                <strong id="level">1</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">LIVES</span>
+                <strong id="lives">3</strong>
+            </div>
+
+        </section>
+
+
+        <!-- GAME LAYOUT -->
+        <section class="game-layout">
+
+            <!-- GAME -->
+            <div class="game-container">
+
+                <canvas
+                    id="spaceCanvas"
+                    width="800"
+                    height="600">
+                </canvas>
+
+
+                <!-- START OVERLAY -->
+                <div
+                    class="game-overlay"
+                    id="startOverlay">
+
+                    <div class="overlay-icon">🚀</div>
+
+                    <h2>DEFEND THE GALAXY</h2>
+
+                    <p>
+                        Destroy enemy ships, avoid collisions and
+                        survive as long as possible.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="game-btn primary-btn"
+                        id="startBtn">
+                        START MISSION
+                    </button>
+
+                </div>
+
+
+                <!-- GAME OVER -->
+                <div
+                    class="game-overlay hidden"
+                    id="gameOverOverlay">
+
+                    <div class="overlay-icon">💥</div>
+
+                    <div class="result-label">
+                        MISSION COMPLETE
+                    </div>
+
+                    <h2>GAME OVER</h2>
+
+                    <div class="final-score">
+
+                        <span>FINAL SCORE</span>
+
+                        <strong id="finalScore">0</strong>
+
+                    </div>
+
+                    <div class="final-stats">
+
+                        <div>
+                            <span>LEVEL</span>
+                            <strong id="finalLevel">1</strong>
+                        </div>
+
+                        <div>
+                            <span>ENEMIES</span>
+                            <strong id="finalEnemies">0</strong>
+                        </div>
+
+                        <div>
+                            <span>HIGH SCORE</span>
+                            <strong id="finalHighScore">0</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="overlay-actions">
+
+                        <button
+                            type="button"
+                            class="game-btn primary-btn"
+                            id="restartBtn">
+                            PLAY AGAIN
+                        </button>
+
+                        <button
+                            type="button"
+                            class="game-btn secondary-btn"
+                            id="submitBtn">
+                            SUBMIT SCORE
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFO PANEL -->
+            <aside class="info-panel">
+
+                <!-- CONTROLS -->
+                <div class="info-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">⌁</span>
+                        CONTROLS
+                    </div>
+
+                    <div class="control-list">
+
+                        <div class="control-row">
+
+                            <div class="key-group">
+                                <span class="key">W</span>
+                                <span class="key">A</span>
+                                <span class="key">S</span>
+                                <span class="key">D</span>
+                            </div>
+
+                            <span>Move Ship</span>
+
+                        </div>
+
+                        <div class="control-row">
+
+                            <div class="key single-key">
+                                SPACE
+                            </div>
+
+                            <span>Fire Weapon</span>
+
+                        </div>
+
+                        <div class="control-row">
+
+                            <div class="key single-key">
+                                ↑ ↓ ← →
+                            </div>
+
+                            <span>Move Ship</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCORING -->
+                <div class="info-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">✦</span>
+                        SCORING
+                    </div>
+
+                    <ul class="score-list">
+
+                        <li>
+                            <span>Enemy Destroyed</span>
+                            <strong>+100</strong>
+                        </li>
+
+                        <li>
+                            <span>Level Bonus</span>
+                            <strong>+250</strong>
+                        </li>
+
+                        <li>
+                            <span>Enemy Collision</span>
+                            <strong class="negative">
+                                -1 LIFE
+                            </strong>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- OBJECTIVE -->
+                <div class="info-card objective-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">◎</span>
+                        OBJECTIVE
+                    </div>
+
+                    <p>
+                        Destroy enemy ships and survive through
+                        increasingly difficult levels.
+                    </p>
+
+                    <div class="tip">
+
+                        <span>TIP</span>
+
+                        Keep moving while shooting.
+                        Staying in one position makes you an easy target.
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- SCORE RESULT MODAL -->
+    <div
+        class="score-result-modal hidden"
+        id="scoreResultModal">
+
+        <div class="score-result-card">
+
+            <div class="success-icon">
+                <span>✓</span>
+            </div>
+
+            <span
+                class="result-status"
+                id="scoreResultStatus">
+                NEW BEST SCORE
+            </span>
+
+            <h2>MISSION COMPLETE</h2>
+
+            <div class="result-game-name">
+                SPACE SHOOTER
+            </div>
+
+            <div class="result-score-box">
+
+                <span>YOUR SCORE</span>
+
+                <strong id="submittedScore">
+                    0
+                </strong>
+
+            </div>
+
+            <p id="scoreResultMessage">
+                Your score has been added to the GAMECORE leaderboard.
+            </p>
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="viewLeaderboardBtn"
+                    class="result-primary-btn">
+                    VIEW LEADERBOARD
+                </button>
+
+                <button
+                    type="button"
+                    id="closeResultBtn"
+                    class="result-secondary-btn">
+                    DONE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPTS MUST BE LAST -->
+    <script src="../../js/app.js"></script>
+    <script src="space-shooter.js"></script>
+
+</body>
+</html>

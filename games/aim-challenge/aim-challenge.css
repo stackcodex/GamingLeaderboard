@@ -1,0 +1,1296 @@
+/* =========================================
+   AIM CHALLENGE
+   GAMECORE
+========================================= */
+
+:root {
+    --bg: #050507;
+    --surface: #0d0d12;
+    --surface-light: #15151c;
+
+    --gold: #ffd166;
+    --pink: #ff4fa3;
+    --green: #5cff8a;
+    --blue: #5b8cff;
+
+    --text: #f5f5f7;
+    --muted: #8f8f9c;
+
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 79, 163, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(91, 140, 255, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(92, 255, 138, 0.05),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.game-navbar {
+    height: 78px;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(5, 5, 7, 0.88);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(18px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+.saturn-logo {
+    width: 36px;
+    height: 36px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.saturn-planet {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        #fff0a8,
+        #ffd166,
+        #d99b20
+    );
+
+    box-shadow:
+        0 0 12px rgba(255, 209, 102, 0.8),
+        inset -4px -4px 7px rgba(0, 0, 0, 0.3);
+}
+
+
+.saturn-ring {
+    position: absolute;
+
+    width: 34px;
+    height: 12px;
+
+    border: 2px solid var(--gold);
+
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+
+    box-shadow:
+        0 0 8px rgba(255, 209, 102, 0.6);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    color: #9696a3;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.aim-page {
+    width: min(1400px, 92%);
+
+    margin: 0 auto;
+
+    padding: 55px 0 80px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.game-header {
+    margin-bottom: 32px;
+}
+
+
+.game-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(92, 255, 138, 0.08);
+
+    border: 1px solid rgba(92, 255, 138, 0.18);
+
+    color: var(--green);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 10px var(--green);
+
+    animation: pulseDot 1.5s infinite;
+}
+
+
+.game-header h1 {
+    margin: 18px 0 8px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(32px, 5vw, 60px);
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+}
+
+
+.game-header h1 span {
+    color: var(--pink);
+
+    text-shadow:
+        0 0 20px rgba(255, 79, 163, 0.35);
+}
+
+
+.game-header p {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.game-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.stat-card {
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        10px 10px 25px rgba(0, 0, 0, 0.3),
+        -5px -5px 15px rgba(255, 255, 255, 0.015);
+
+    transition: 0.3s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+
+.stat-label {
+    display: block;
+
+    color: var(--muted);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+
+.stat-card strong {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 25px;
+
+    color: white;
+}
+
+
+.combo-card strong {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   GAME LAYOUT
+========================================= */
+
+.game-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 300px;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   GAME CONTAINER
+========================================= */
+
+.game-container {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        15px 15px 40px rgba(0, 0, 0, 0.45),
+        inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+
+#aimCanvas {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 800 / 560;
+
+    border-radius: 17px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #11121a 0%,
+            #09090d 65%,
+            #050507 100%
+        );
+
+    cursor: crosshair;
+
+    box-shadow:
+        inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.game-overlay {
+    position: absolute;
+
+    inset: 14px;
+
+    border-radius: 17px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 21, 28, 0.9),
+            rgba(5, 5, 7, 0.96)
+        );
+
+    backdrop-filter: blur(12px);
+
+    z-index: 10;
+}
+
+
+.game-overlay.hidden {
+    display: none;
+}
+
+
+.overlay-icon {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 79, 163, 0.18),
+            rgba(91, 140, 255, 0.08)
+        );
+
+    border: 1px solid rgba(255, 79, 163, 0.2);
+
+    font-size: 36px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 79, 163, 0.08);
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+
+.game-overlay h2 {
+    margin: 0 0 8px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(22px, 3vw, 32px);
+
+    letter-spacing: 1px;
+}
+
+
+.game-overlay p {
+    color: var(--muted);
+
+    max-width: 400px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+.result-label {
+    color: var(--green);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   FINAL SCORE
+========================================= */
+
+.final-score {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 5px 0 20px;
+}
+
+
+.final-score span {
+    color: var(--muted);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.final-score strong {
+    margin-top: 5px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 45px;
+
+    color: var(--gold);
+
+    text-shadow:
+        0 0 25px rgba(255, 209, 102, 0.35);
+}
+
+
+.final-stats {
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.final-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.final-stats span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.final-stats strong {
+    margin-top: 4px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.game-btn {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 13px 20px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.game-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+.primary-btn {
+    color: #09090b;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #ffe39a
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255, 209, 102, 0.2);
+}
+
+
+.primary-btn:hover {
+    box-shadow:
+        0 12px 30px rgba(255, 209, 102, 0.35);
+}
+
+
+.secondary-btn {
+    color: white;
+
+    background: rgba(255, 79, 163, 0.1);
+
+    border: 1px solid rgba(255, 79, 163, 0.3);
+}
+
+
+.secondary-btn:hover {
+    background: rgba(255, 79, 163, 0.18);
+
+    box-shadow:
+        0 10px 25px rgba(255, 79, 163, 0.15);
+}
+
+
+.overlay-actions {
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   SIDE PANEL
+========================================= */
+
+.info-panel {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.info-card {
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.info-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 15px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.info-icon {
+    color: var(--pink);
+
+    font-size: 17px;
+}
+
+
+.control-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.mouse-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: rgba(91, 140, 255, 0.1);
+
+    color: var(--blue);
+
+    font-size: 19px;
+}
+
+
+.control-box strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.control-box span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   SCORING
+========================================= */
+
+.score-list {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.score-list li {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.score-list li:last-child {
+    border-bottom: none;
+}
+
+
+.score-list strong {
+    color: var(--green);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+}
+
+
+.score-list strong.negative {
+    color: var(--pink);
+}
+
+
+/* =========================================
+   OBJECTIVE
+========================================= */
+
+.objective-card p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin: 0 0 14px;
+}
+
+
+.objective-card p strong {
+    color: white;
+}
+
+
+.tip {
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 209, 102, 0.06);
+
+    border: 1px solid rgba(255, 209, 102, 0.12);
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.tip span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--gold);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SCORE RESULT MODAL
+========================================= */
+
+.score-result-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(14px);
+}
+
+
+.score-result-modal.hidden {
+    display: none;
+}
+
+
+.score-result-card {
+    width: min(430px, 100%);
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 25, 34, 0.98),
+            rgba(10, 10, 15, 0.98)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.65),
+        0 0 50px rgba(255, 209, 102, 0.06);
+
+    animation: modalIn 0.35s ease;
+}
+
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: rgba(92, 255, 138, 0.1);
+
+    border: 1px solid rgba(92, 255, 138, 0.25);
+
+    box-shadow:
+        0 0 30px rgba(92, 255, 138, 0.12);
+}
+
+
+.success-icon span {
+    color: var(--green);
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+
+.result-status {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--green);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.score-result-card h2 {
+    margin: 0;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+}
+
+
+.result-game-name {
+    margin-top: 8px;
+
+    color: var(--pink);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.result-score-box {
+    margin: 25px 0 18px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 209, 102, 0.06);
+
+    border: 1px solid rgba(255, 209, 102, 0.15);
+}
+
+
+.result-score-box span {
+    display: block;
+
+    color: var(--muted);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+
+.result-score-box strong {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 38px;
+
+    text-shadow:
+        0 0 22px rgba(255, 209, 102, 0.3);
+}
+
+
+.score-result-card p {
+    margin: 0 auto 24px;
+
+    max-width: 320px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+.result-actions {
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+}
+
+
+.result-actions button {
+    flex: 1;
+
+    border-radius: 11px;
+
+    padding: 12px 15px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.result-actions button:hover {
+    transform: translateY(-2px);
+}
+
+
+.result-primary-btn {
+    border: none;
+
+    color: #09090b;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #ffe39a
+        );
+
+    box-shadow:
+        0 7px 20px rgba(255, 209, 102, 0.18);
+}
+
+
+.result-secondary-btn {
+    color: white;
+
+    background: rgba(255, 79, 163, 0.08);
+
+    border: 1px solid rgba(255, 79, 163, 0.25);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+@keyframes scoreFlash {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.stat-flash {
+    animation: scoreFlash 0.25s ease;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .game-navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .game-stats {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .info-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .game-navbar {
+        height: 68px;
+    }
+
+    .brand span {
+        font-size: 12px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .aim-page {
+        width: 94%;
+
+        padding-top: 35px;
+    }
+
+    .game-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card strong {
+        font-size: 20px;
+    }
+
+    .game-container {
+        padding: 8px;
+    }
+
+    .game-overlay {
+        inset: 8px;
+    }
+
+    .overlay-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 27px;
+    }
+
+    .game-overlay h2 {
+        font-size: 20px;
+    }
+
+    .overlay-actions {
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .final-stats {
+        gap: 18px;
+    }
+
+    .score-result-card {
+        padding: 28px 20px;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+}

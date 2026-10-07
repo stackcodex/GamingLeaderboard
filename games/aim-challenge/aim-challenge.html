@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aim Challenge | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="aim-challenge.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="game-navbar">
+
+        <a href="../../index.html" class="brand">
+
+            <div class="saturn-logo">
+                <div class="saturn-planet"></div>
+                <div class="saturn-ring"></div>
+            </div>
+
+            <span>GAMECORE</span>
+
+        </a>
+
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <a href="../../games.html">Games</a>
+            <a href="../../leaderboard.html">Leaderboard</a>
+            <a href="../../profile.html">Profile</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="aim-page">
+
+        <!-- HEADER -->
+        <section class="game-header">
+
+            <div>
+
+                <div class="game-label">
+                    <span class="live-dot"></span>
+                    PLAYABLE GAME
+                </div>
+
+                <h1>AIM <span>CHALLENGE</span></h1>
+
+                <p>
+                    Test your reaction speed, accuracy and precision.
+                    Hit as many targets as possible before time runs out.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME STATS -->
+        <section class="game-stats">
+
+            <div class="stat-card">
+                <span class="stat-label">SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">TIME</span>
+                <strong id="timer">30</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">HITS</span>
+                <strong id="hits">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">ACCURACY</span>
+                <strong id="accuracy">100%</strong>
+            </div>
+
+            <div class="stat-card combo-card">
+                <span class="stat-label">COMBO</span>
+                <strong id="combo">0x</strong>
+            </div>
+
+        </section>
+
+
+        <!-- GAME AREA -->
+        <section class="game-layout">
+
+            <!-- CANVAS -->
+            <div class="game-container">
+
+                <canvas
+                    id="aimCanvas"
+                    width="800"
+                    height="560"
+                ></canvas>
+
+
+                <!-- START OVERLAY -->
+                <div class="game-overlay" id="startOverlay">
+
+                    <div class="overlay-icon">🎯</div>
+
+                    <h2>READY TO AIM?</h2>
+
+                    <p>
+                        Hit the targets as quickly and accurately as possible.
+                    </p>
+
+                    <button
+                        class="game-btn primary-btn"
+                        id="startBtn"
+                        type="button"
+                    >
+                        START CHALLENGE
+                    </button>
+
+                </div>
+
+
+                <!-- GAME OVER OVERLAY -->
+                <div
+                    class="game-overlay hidden"
+                    id="gameOverOverlay"
+                >
+
+                    <div class="overlay-icon">🏆</div>
+
+                    <div class="result-label">
+                        CHALLENGE COMPLETE
+                    </div>
+
+                    <h2>TIME'S UP!</h2>
+
+                    <div class="final-score">
+
+                        <span>FINAL SCORE</span>
+
+                        <strong id="finalScore">0</strong>
+
+                    </div>
+
+                    <div class="final-stats">
+
+                        <div>
+                            <span>HITS</span>
+                            <strong id="finalHits">0</strong>
+                        </div>
+
+                        <div>
+                            <span>ACCURACY</span>
+                            <strong id="finalAccuracy">0%</strong>
+                        </div>
+
+                        <div>
+                            <span>BEST COMBO</span>
+                            <strong id="finalCombo">0x</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="overlay-actions">
+
+                        <button
+                            class="game-btn primary-btn"
+                            id="restartBtn"
+                            type="button"
+                        >
+                            PLAY AGAIN
+                        </button>
+
+                        <button
+                            class="game-btn secondary-btn"
+                            id="submitBtn"
+                            type="button"
+                        >
+                            SUBMIT SCORE
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIDE PANEL -->
+            <aside class="info-panel">
+
+                <!-- CONTROLS -->
+                <div class="info-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">⌁</span>
+                        CONTROLS
+                    </div>
+
+                    <div class="control-box">
+
+                        <div class="mouse-icon">◉</div>
+
+                        <div>
+                            <strong>Mouse / Click</strong>
+                            <span>Hit the targets</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCORING -->
+                <div class="info-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">✦</span>
+                        SCORING
+                    </div>
+
+                    <ul class="score-list">
+
+                        <li>
+                            <span>Target Hit</span>
+                            <strong>+100</strong>
+                        </li>
+
+                        <li>
+                            <span>Combo Bonus</span>
+                            <strong>+</strong>
+                        </li>
+
+                        <li>
+                            <span>Miss</span>
+                            <strong class="negative">-25</strong>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- OBJECTIVE -->
+                <div class="info-card objective-card">
+
+                    <div class="info-title">
+                        <span class="info-icon">◎</span>
+                        OBJECTIVE
+                    </div>
+
+                    <p>
+                        Destroy as many targets as possible within
+                        <strong>30 seconds</strong>.
+                    </p>
+
+                    <div class="tip">
+
+                        <span>TIP</span>
+
+                        Keep your combo alive for higher scores.
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- SCORE RESULT MODAL -->
+    <div
+        class="score-result-modal hidden"
+        id="scoreResultModal"
+    >
+
+        <div class="score-result-card">
+
+            <div class="success-icon">
+                <span>✓</span>
+            </div>
+
+            <span
+                class="result-status"
+                id="scoreResultStatus"
+            >
+                NEW BEST SCORE
+            </span>
+
+            <h2>RUN COMPLETE</h2>
+
+            <div class="result-game-name">
+                AIM CHALLENGE
+            </div>
+
+            <div class="result-score-box">
+
+                <span>YOUR SCORE</span>
+
+                <strong id="submittedScore">0</strong>
+
+            </div>
+
+            <p id="scoreResultMessage">
+                Your score has been added to the GAMECORE leaderboard.
+            </p>
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="viewLeaderboardBtn"
+                    class="result-primary-btn"
+                >
+                    VIEW LEADERBOARD
+                </button>
+
+                <button
+                    type="button"
+                    id="closeResultBtn"
+                    class="result-secondary-btn"
+                >
+                    DONE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPTS MUST BE AFTER THE MODAL -->
+    <script src="../../js/app.js"></script>
+    <script src="aim-challenge.js"></script>
+
+</body>
+</html>

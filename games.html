@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAMECORE | Games</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-pink"></div>
+    <div class="ambient ambient-blue"></div>
+    <div class="ambient ambient-green"></div>
+
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="saturn-logo">
+
+                <div class="saturn-ring ring-back"></div>
+
+                <div class="saturn-planet">
+                    <div class="planet-highlight"></div>
+                </div>
+
+                <div class="saturn-ring ring-front"></div>
+
+            </div>
+
+            <div class="brand-name">
+                <span>GAME</span>CORE
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="games.html" class="active">
+                Games
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+            <a href="profile.html">
+                Players
+            </a>
+
+        </nav>
+
+
+        <a href="login.html" class="login-btn">
+            SIGN IN
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+
+        <!-- PAGE HERO -->
+
+        <section class="games-hero">
+
+            <div class="games-hero-content">
+
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    10 CHALLENGES AVAILABLE
+                </div>
+
+                <h1>
+                    CHOOSE
+                    <span>YOUR</span>
+                    <strong>BATTLE.</strong>
+                </h1>
+
+                <p>
+                    Pick a game, set your score and compete
+                    against players from around the world.
+                </p>
+
+            </div>
+
+
+            <!-- DECORATIVE 3D ELEMENT -->
+
+            <div class="games-orbit">
+
+                <div class="game-orbit-ring orbit-1"></div>
+                <div class="game-orbit-ring orbit-2"></div>
+                <div class="game-orbit-ring orbit-3"></div>
+
+                <div class="game-core">
+                    <span>10</span>
+                    <small>GAMES</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME CONTROLS -->
+
+        <section class="game-controls">
+
+            <div class="game-tabs">
+
+                <button class="game-filter active" data-filter="all">
+                    ALL GAMES
+                </button>
+
+                <button class="game-filter" data-filter="playable">
+                    PLAYABLE
+                </button>
+
+                <button class="game-filter" data-filter="score">
+                    SCORE ENTRY
+                </button>
+
+            </div>
+
+
+            <div class="game-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="gameSearch"
+                    placeholder="Search games..."
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- PLAYABLE GAMES -->
+
+        <section class="games-section">
+
+            <div class="section-heading">
+
+                <span>
+                    PLAYABLE ARENA
+                </span>
+
+                <h2>
+                    PLAY
+                    <em>NOW</em>
+                </h2>
+
+                <p class="section-description">
+                    Jump directly into these games and compete
+                    for your highest score.
+                </p>
+
+            </div>
+
+
+            <div class="games-grid">
+
+
+                <!-- SNAKE RUSH -->
+
+                <article
+                    class="game-tile playable"
+                    data-category="playable"
+                    data-name="snake rush"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        01
+                    </div>
+
+                    <div class="playable-tag">
+                        ● PLAYABLE
+                    </div>
+
+
+                    <div class="tile-visual snake-visual">
+
+                        <div class="snake-head"></div>
+                        <div class="snake-body body-1"></div>
+                        <div class="snake-body body-2"></div>
+                        <div class="snake-body body-3"></div>
+
+                        <div class="snake-food"></div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>ARCADE</span>
+
+                        <h3>
+                            SNAKE RUSH
+                        </h3>
+
+                        <p>
+                            Grow your snake and survive
+                            as long as possible.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>12,840</strong>
+                            </div>
+
+                            <a
+                                href="games/snake/snake.html"
+                                class="tile-btn pink-btn"
+                            >
+                                PLAY →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MEMORY MATCH -->
+
+                <article
+                    class="game-tile playable"
+                    data-category="playable"
+                    data-name="memory match"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        02
+                    </div>
+
+                    <div class="playable-tag">
+                        ● PLAYABLE
+                    </div>
+
+
+                    <div class="tile-visual memory-visual">
+
+                        <div>?</div>
+                        <div>★</div>
+                        <div>◆</div>
+                        <div>?</div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>PUZZLE</span>
+
+                        <h3>
+                            MEMORY MATCH
+                        </h3>
+
+                        <p>
+                            Match every pair and beat
+                            the clock.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>8,620</strong>
+                            </div>
+
+                            <a
+                                href="games/memory/memory.html"
+                                class="tile-btn blue-btn"
+                            >
+                                PLAY →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BRICK BREAKER -->
+
+                <article
+                    class="game-tile playable"
+                    data-category="playable"
+                    data-name="brick breaker"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        03
+                    </div>
+
+                    <div class="playable-tag">
+                        ● PLAYABLE
+                    </div>
+
+
+                    <div class="tile-visual brick-visual">
+
+                        <div class="bricks">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="brick-ball"></div>
+
+                        <div class="paddle"></div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>ARCADE</span>
+
+                        <h3>
+                            BRICK BREAKER
+                        </h3>
+
+                        <p>
+                            Destroy every brick and
+                            keep the ball alive.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>18,950</strong>
+                            </div>
+
+                            <a
+                                href="games/brick-breaker/brick-breaker.html"
+                                class="tile-btn gold-btn"
+                            >
+                                PLAY →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AIM CHALLENGE -->
+
+                <article
+                    class="game-tile playable"
+                    data-category="playable"
+                    data-name="aim challenge"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        04
+                    </div>
+
+                    <div class="playable-tag">
+                        ● PLAYABLE
+                    </div>
+
+
+                    <div class="tile-visual aim-visual">
+
+                        <div class="aim-target">
+
+                            <div class="target-ring target-ring-1">
+
+                                <div class="target-ring target-ring-2">
+
+                                    <div class="target-center"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>SKILL</span>
+
+                        <h3>
+                            AIM CHALLENGE
+                        </h3>
+
+                        <p>
+                            Test your precision and
+                            reaction speed.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>9,780</strong>
+                            </div>
+
+                            <a
+                                href="games/aim-challenge/aim-challenge.html"
+                                class="tile-btn pink-btn"
+                            >
+                                PLAY →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SPACE SHOOTER -->
+
+                <article
+                    class="game-tile playable"
+                    data-category="playable"
+                    data-name="space shooter"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        05
+                    </div>
+
+                    <div class="playable-tag">
+                        ● PLAYABLE
+                    </div>
+
+
+                    <div class="tile-visual space-visual">
+
+                        <div class="planet"></div>
+
+                        <div class="spaceship">
+                            ▲
+                        </div>
+
+                        <div class="laser"></div>
+
+                        <div class="star star-1"></div>
+                        <div class="star star-2"></div>
+                        <div class="star star-3"></div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>SHOOTER</span>
+
+                        <h3>
+                            SPACE SHOOTER
+                        </h3>
+
+                        <p>
+                            Destroy enemies and survive
+                            the cosmic battlefield.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>24,560</strong>
+                            </div>
+
+                            <a
+                                href="games/space-shooter/space-shooter.html"
+                                class="tile-btn blue-btn"
+                            >
+                                PLAY →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCORE ENTRY GAMES -->
+
+        <section class="games-section score-section">
+
+            <div class="section-heading">
+
+                <span>
+                    COMPETITIVE TRACKING
+                </span>
+
+                <h2>
+                    SCORE
+                    <em>ENTRY</em>
+                </h2>
+
+                <p class="section-description">
+                    Already played elsewhere?
+                    Enter your score and join the leaderboard.
+                </p>
+
+            </div>
+
+
+            <div class="games-grid score-grid">
+
+
+                <!-- SPEED RACER -->
+
+                <article
+                    class="game-tile score-only"
+                    data-category="score"
+                    data-name="speed racer"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        06
+                    </div>
+
+                    <div class="score-tag">
+                        SCORE ENTRY
+                    </div>
+
+
+                    <div class="tile-visual racer-visual">
+
+                        <div class="road-lines"></div>
+
+                        <div class="race-car">
+                            ◆
+                        </div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>RACING</span>
+
+                        <h3>
+                            SPEED RACER
+                        </h3>
+
+                        <p>
+                            Race against the clock and
+                            submit your fastest score.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>32,400</strong>
+                            </div>
+
+                            <button
+                                class="tile-btn green-btn score-submit"
+                                data-game="Speed Racer"
+                            >
+                                SUBMIT →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PENALTY PRO -->
+
+                <article
+                    class="game-tile score-only"
+                    data-category="score"
+                    data-name="penalty pro"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        07
+                    </div>
+
+                    <div class="score-tag">
+                        SCORE ENTRY
+                    </div>
+
+
+                    <div class="tile-visual penalty-visual">
+
+                        <div class="goal-frame"></div>
+
+                        <div class="football">
+                            ●
+                        </div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>SPORTS</span>
+
+                        <h3>
+                            PENALTY PRO
+                        </h3>
+
+                        <p>
+                            Show your accuracy and
+                            record your best performance.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>9,250</strong>
+                            </div>
+
+                            <button
+                                class="tile-btn green-btn score-submit"
+                                data-game="Penalty Pro"
+                            >
+                                SUBMIT →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOXING ARENA -->
+
+                <article
+                    class="game-tile score-only"
+                    data-category="score"
+                    data-name="boxing arena"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        08
+                    </div>
+
+                    <div class="score-tag">
+                        SCORE ENTRY
+                    </div>
+
+
+                    <div class="tile-visual boxing-visual">
+
+                        <div class="boxing-glove">
+                            ◆
+                        </div>
+
+                        <div class="boxing-ring"></div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>FIGHTING</span>
+
+                        <h3>
+                            BOXING ARENA
+                        </h3>
+
+                        <p>
+                            Track your victories and
+                            climb the fighting ranks.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>16,780</strong>
+                            </div>
+
+                            <button
+                                class="tile-btn green-btn score-submit"
+                                data-game="Boxing Arena"
+                            >
+                                SUBMIT →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PUZZLE QUEST -->
+
+                <article
+                    class="game-tile score-only"
+                    data-category="score"
+                    data-name="puzzle quest"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        09
+                    </div>
+
+                    <div class="score-tag">
+                        SCORE ENTRY
+                    </div>
+
+
+                    <div class="tile-visual quest-visual">
+
+                        <div class="quest-cube">
+                            <span>◆</span>
+                            <span>●</span>
+                            <span>▲</span>
+                            <span>■</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>STRATEGY</span>
+
+                        <h3>
+                            PUZZLE QUEST
+                        </h3>
+
+                        <p>
+                            Solve challenging puzzles
+                            and submit your score.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>11,920</strong>
+                            </div>
+
+                            <button
+                                class="tile-btn green-btn score-submit"
+                                data-game="Puzzle Quest"
+                            >
+                                SUBMIT →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARCHERY MASTERS -->
+
+                <article
+                    class="game-tile score-only"
+                    data-category="score"
+                    data-name="archery masters"
+                >
+
+                    <div class="tile-glow"></div>
+
+                    <div class="game-number">
+                        10
+                    </div>
+
+                    <div class="score-tag">
+                        SCORE ENTRY
+                    </div>
+
+
+                    <div class="tile-visual archery-visual">
+
+                        <div class="archery-target">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <div class="arrow">
+                            ───►
+                        </div>
+
+                    </div>
+
+
+                    <div class="tile-info">
+
+                        <span>PRECISION</span>
+
+                        <h3>
+                            ARCHERY MASTERS
+                        </h3>
+
+                        <p>
+                            Hit the target and prove
+                            your precision.
+                        </p>
+
+
+                        <div class="tile-bottom">
+
+                            <div class="best-score">
+                                <small>BEST SCORE</small>
+                                <strong>14,380</strong>
+                            </div>
+
+                            <button
+                                class="tile-btn green-btn score-submit"
+                                data-game="Archery Masters"
+                            >
+                                SUBMIT →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+<!-- SCORE SUBMISSION MODAL -->
+
+<div class="score-modal" id="scoreModal">
+
+    <div class="modal-box score-entry-box">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon score-icon">
+            +
+        </div>
+
+        <span class="modal-label">
+            SCORE SUBMISSION
+        </span>
+
+        <h2>
+            <span id="modalGameName">GAME</span>
+        </h2>
+
+        <p>
+            Enter your score to add it to the GAMECORE leaderboard.
+        </p>
+
+        <form id="scoreForm">
+
+            <label for="scoreInput">
+                YOUR SCORE
+            </label>
+
+            <input
+                type="number"
+                id="scoreInput"
+                placeholder="Enter score"
+                min="0"
+                required
+            >
+
+            <button
+                type="submit"
+                class="primary-btn modal-submit"
+            >
+                SUBMIT SCORE →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- SCORE SUCCESS MODAL -->
+
+<div class="score-modal" id="scoreSuccessModal">
+
+    <div class="modal-box success-box">
+
+        <div class="success-glow"></div>
+
+        <button
+            class="modal-close"
+            id="successClose"
+            type="button"
+        >
+            ×
+        </button>
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <span class="modal-label success-label">
+            SCORE SUBMITTED
+        </span>
+
+        <h2 id="successGameName">
+            GAME
+        </h2>
+
+        <div class="submitted-score">
+            <small>YOUR SCORE</small>
+
+            <strong id="successScore">
+                0
+            </strong>
+        </div>
+
+        <div class="score-status" id="scoreStatus">
+            SCORE RECORDED
+        </div>
+
+        <p id="successMessage">
+            Your score has been added to the GAMECORE leaderboard.
+        </p>
+
+        <div class="success-actions">
+
+            <a
+                href="leaderboard.html"
+                class="success-btn leaderboard-btn"
+            >
+                VIEW LEADERBOARD
+            </a>
+
+            <button
+                type="button"
+                class="success-btn close-success-btn"
+                id="successDone"
+            >
+                DONE
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <div class="mini-saturn">
+
+                <div class="mini-ring"></div>
+                <div class="mini-planet"></div>
+
+            </div>
+
+            <span>GAME</span>CORE
+
+        </div>
+
+
+        <p>
+            © 2026 GAMECORE.
+            PLAY. COMPETE. DOMINATE.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="games.html">
+                Games
+            </a>
+
+            <a href="leaderboard.html">
+                Leaderboard
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/games.js"></script>
+
+</body>
+</html>

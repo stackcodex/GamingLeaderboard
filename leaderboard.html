@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAMECORE | Leaderboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+
+<body>
+
+<div class="page-glow glow-gold"></div>
+<div class="page-glow glow-pink"></div>
+<div class="page-glow glow-blue"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <a href="index.html" class="brand">
+        <div class="saturn-logo">
+            <div class="saturn-ring ring-back"></div>
+            <div class="saturn-planet">
+                <div class="planet-highlight"></div>
+            </div>
+            <div class="saturn-ring ring-front"></div>
+        </div>
+
+        <span class="brand-name">GAMECORE</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="leaderboard.html" class="active">Leaderboard</a>
+        <a href="profile.html">Players</a>
+    </div>
+
+    <a href="login.html" class="login-btn">SIGN IN</a>
+
+</nav>
+
+
+<!-- MAIN -->
+<main class="leaderboard-page">
+
+    <!-- HERO -->
+    <section class="leaderboard-hero">
+
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            LIVE GLOBAL RANKINGS
+        </div>
+
+        <h1>
+            THE HALL OF
+            <span>CHAMPIONS</span>
+        </h1>
+
+        <p>
+            Compete across every game. Climb the rankings.
+            Become the name everyone remembers.
+        </p>
+
+    </section>
+
+
+    <!-- CONTROL BAR -->
+    <section class="leaderboard-controls">
+
+        <div class="control-left">
+
+            <div class="control-group">
+                <label>GAME</label>
+
+                <select id="gameFilter">
+                    <option value="all">All Games</option>
+                    <option value="snake">Snake Rush</option>
+                    <option value="memory">Memory Match</option>
+                    <option value="brick">Brick Breaker</option>
+                    <option value="aim">Aim Challenge</option>
+                    <option value="space">Space Shooter</option>
+                    <option value="racer">Speed Racer</option>
+                    <option value="penalty">Penalty Pro</option>
+                    <option value="boxing">Boxing Arena</option>
+                    <option value="puzzle">Puzzle Quest</option>
+                    <option value="archery">Archery Masters</option>
+                </select>
+
+            </div>
+
+
+            <div class="control-group">
+                <label>PERIOD</label>
+
+                <select id="periodFilter">
+                    <option value="all">All Time</option>
+                    <option value="month">This Month</option>
+                    <option value="week">This Week</option>
+                    <option value="today">Today</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                type="text"
+                id="playerSearch"
+                placeholder="Search player..."
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- CHAMPION ARENA -->
+    <section class="champion-arena">
+
+        <div class="arena-header">
+
+            <div>
+                <span class="section-kicker">CURRENT SEASON</span>
+                <h2>THE ELITE THREE</h2>
+            </div>
+
+            <div class="season-badge">
+                SEASON <strong>01</strong>
+            </div>
+
+        </div>
+
+
+        <!-- PODIUM -->
+        <div class="podium">
+
+            <!-- SECOND -->
+            <div class="podium-player second">
+
+                <div class="rank-orbit">
+                    <div class="avatar avatar-blue">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <span class="rank-number">02</span>
+                </div>
+
+                <div class="player-name">NOVA</div>
+                <div class="player-title">ELITE PLAYER</div>
+
+                <div class="score-value">
+                    87,620
+                    <small>PTS</small>
+                </div>
+
+                <div class="podium-block">
+                    <span>02</span>
+                </div>
+
+            </div>
+
+
+            <!-- FIRST -->
+            <div class="podium-player first">
+
+                <div class="crown">✦</div>
+
+                <div class="rank-orbit champion">
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                    <div class="avatar avatar-gold">
+
+                        <span class="helmet-top"></span>
+
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+
+                        <span class="avatar-mask"></span>
+
+                    </div>
+
+                    <span class="rank-number">01</span>
+
+                </div>
+
+                <div class="player-name">ZERO</div>
+                <div class="player-title champion-title">CHAMPION</div>
+
+                <div class="score-value champion-score">
+                    92,840
+                    <small>PTS</small>
+                </div>
+
+                <div class="podium-block champion-block">
+                    <span>01</span>
+                </div>
+
+            </div>
+
+
+            <!-- THIRD -->
+            <div class="podium-player third">
+
+                <div class="rank-orbit">
+
+                    <div class="avatar avatar-pink">
+
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+
+                        <span class="avatar-mask"></span>
+
+                    </div>
+
+                    <span class="rank-number">03</span>
+
+                </div>
+
+                <div class="player-name">RUSH</div>
+                <div class="player-title">ELITE PLAYER</div>
+
+                <div class="score-value">
+                    81,450
+                    <small>PTS</small>
+                </div>
+
+                <div class="podium-block">
+                    <span>03</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEADERBOARD STATS -->
+    <section class="leaderboard-stats">
+
+        <div class="stat-card">
+            <span class="stat-label">PLAYERS</span>
+            <strong class="counter" data-value="12480">0</strong>
+            <span class="stat-detail">COMPETING</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">TOTAL SCORES</span>
+            <strong class="counter" data-value="896420">0</strong>
+            <span class="stat-detail">RECORDED</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-label">ACTIVE TODAY</span>
+            <strong class="counter" data-value="2840">0</strong>
+            <span class="stat-detail">PLAYERS ONLINE</span>
+        </div>
+
+        <div class="stat-card highlight-stat">
+            <span class="stat-label">HIGH SCORE</span>
+            <strong>92,840</strong>
+            <span class="stat-detail">ZERO</span>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN RANKING -->
+    <section class="ranking-section">
+
+        <div class="ranking-heading">
+
+            <div>
+                <span class="section-kicker">GLOBAL RANKING</span>
+                <h2>TOP PLAYERS</h2>
+            </div>
+
+            <div class="live-indicator">
+                <span></span>
+                LIVE
+            </div>
+
+        </div>
+
+
+        <!-- TABLE HEADER -->
+        <div class="ranking-header">
+            <span>RANK</span>
+            <span>PLAYER</span>
+            <span>SCORE</span>
+            <span>STATUS</span>
+        </div>
+
+        <div class="ranking-list">
+
+
+            <!-- 1 -->
+            <div class="player-row rank-one" data-player="zero">
+
+                <div class="rank-cell">
+                    <span class="rank-medal gold-medal">01</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-gold">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>ZERO</strong>
+                        <small>Champion</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 99</span>
+                </div>
+
+                <div class="score-cell">
+                    92,840
+                </div>
+
+                <div class="status-cell">
+                    <span class="online-status"></span>
+                    ONLINE
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+            <div class="player-row" data-player="nova">
+
+                <div class="rank-cell">
+                    <span class="rank-medal silver-medal">02</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-blue">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>NOVA</strong>
+                        <small>Elite Player</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 94</span>
+                </div>
+
+                <div class="score-cell">
+                    87,620
+                </div>
+
+                <div class="status-cell">
+                    <span class="online-status"></span>
+                    ONLINE
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+            <div class="player-row" data-player="rush">
+
+                <div class="rank-cell">
+                    <span class="rank-medal bronze-medal">03</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-pink">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>RUSH</strong>
+                        <small>Elite Player</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 91</span>
+                </div>
+
+                <div class="score-cell">
+                    81,450
+                </div>
+
+                <div class="status-cell">
+                    <span class="online-status"></span>
+                    ONLINE
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+            <div class="player-row" data-player="shadow">
+
+                <div class="rank-cell">
+                    <span class="rank-number-small">04</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-purple">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>SHADOW</strong>
+                        <small>Challenger</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 87</span>
+                </div>
+
+                <div class="score-cell">76,230</div>
+
+                <div class="status-cell">
+                    <span class="offline-status"></span>
+                    AWAY
+                </div>
+
+            </div>
+
+
+            <!-- 5 -->
+            <div class="player-row" data-player="blaze">
+
+                <div class="rank-cell">
+                    <span class="rank-number-small">05</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-orange">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>BLAZE</strong>
+                        <small>Challenger</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 84</span>
+                </div>
+
+                <div class="score-cell">72,890</div>
+
+                <div class="status-cell">
+                    <span class="offline-status"></span>
+                    AWAY
+                </div>
+
+            </div>
+
+
+            <!-- 6 -->
+            <div class="player-row" data-player="phantom">
+
+                <div class="rank-cell">
+                    <span class="rank-number-small">06</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-green">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>PHANTOM</strong>
+                        <small>Challenger</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 79</span>
+                </div>
+
+                <div class="score-cell">68,540</div>
+
+                <div class="status-cell">
+                    <span class="offline-status"></span>
+                    AWAY
+                </div>
+
+            </div>
+
+
+            <!-- 7 -->
+            <div class="player-row" data-player="viper">
+
+                <div class="rank-cell">
+                    <span class="rank-number-small">07</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-pink">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>VIPER</strong>
+                        <small>Challenger</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 75</span>
+                </div>
+
+                <div class="score-cell">64,120</div>
+
+                <div class="status-cell">
+                    <span class="offline-status"></span>
+                    OFFLINE
+                </div>
+
+            </div>
+
+
+            <!-- 8 -->
+            <div class="player-row" data-player="orbit">
+
+                <div class="rank-cell">
+                    <span class="rank-number-small">08</span>
+                </div>
+
+                <div class="player-cell">
+
+                    <div class="mini-avatar avatar-blue">
+                        <span class="avatar-eye eye-left"></span>
+                        <span class="avatar-eye eye-right"></span>
+                        <span class="avatar-mask"></span>
+                    </div>
+
+                    <div>
+                        <strong>ORBIT</strong>
+                        <small>Challenger</small>
+                    </div>
+
+                </div>
+
+                <div class="level-cell">
+                    <span class="level-badge">LV. 71</span>
+                </div>
+
+                <div class="score-cell">59,870</div>
+
+                <div class="status-cell">
+                    <span class="offline-status"></span>
+                    OFFLINE
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT USER -->
+        <div class="your-rank">
+
+            <div class="your-rank-left">
+
+                <div class="your-rank-number">
+                    #124
+                </div>
+
+                <div>
+                    <span>YOUR CURRENT POSITION</span>
+                    <strong>KEEP CLIMBING</strong>
+                </div>
+
+            </div>
+
+            <div class="your-score">
+                <small>TOTAL SCORE</small>
+                <strong>18,420</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="brand">
+        <div class="saturn-logo">
+            <div class="saturn-ring ring-back"></div>
+            <div class="saturn-planet">
+                <div class="planet-highlight"></div>
+            </div>
+            <div class="saturn-ring ring-front"></div>
+        </div>
+
+        <span class="brand-name">GAMECORE</span>
+    </div>
+
+    <p>PLAY. COMPETE. DOMINATE.</p>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+<script src="js/leaderboard.js"></script>
+
+</body>
+</html>

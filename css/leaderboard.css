@@ -1,0 +1,2242 @@
+/* =========================================
+   LEADERBOARD PAGE
+========================================= */
+
+.leaderboard-page {
+    width: min(1400px, 92%);
+    margin: 0 auto;
+    padding: 90px 0 100px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.leaderboard-hero {
+    text-align: center;
+    padding: 70px 20px 55px;
+}
+
+.leaderboard-hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(42px, 6vw, 82px);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin: 25px 0 22px;
+}
+
+.leaderboard-hero h1 span {
+    display: block;
+    color: var(--gold);
+    text-shadow:
+        0 0 20px rgba(255, 209, 102, .25),
+        0 0 50px rgba(255, 209, 102, .12);
+}
+
+.leaderboard-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.leaderboard-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    padding: 22px;
+    margin-bottom: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 24px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.04),
+        0 20px 60px rgba(0,0,0,.25);
+
+    backdrop-filter: blur(18px);
+}
+
+.control-left {
+    display: flex;
+    gap: 15px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.control-group select {
+    min-width: 170px;
+    padding: 13px 38px 13px 15px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+
+    background: #111117;
+    color: white;
+
+    font-family: "Inter", sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-box {
+    width: 270px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 15px;
+
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,.08);
+
+    background: #111117;
+}
+
+.search-icon {
+    color: var(--pink);
+    font-size: 22px;
+}
+
+.search-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+    font-size: 13px;
+}
+
+.search-box input::placeholder {
+    color: #676773;
+}
+
+
+/* =========================================
+   CHAMPION ARENA
+========================================= */
+
+.champion-arena {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 620px;
+    padding: 38px;
+
+    border-radius: 35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 65%,
+            rgba(255,209,102,.07),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #111117,
+            #09090d
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.04),
+        0 35px 100px rgba(0,0,0,.35);
+}
+
+.champion-arena::before {
+    content: "";
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,209,102,.05);
+
+    box-shadow:
+        0 0 0 80px rgba(255,209,102,.015),
+        0 0 0 160px rgba(255,209,102,.01);
+
+    pointer-events: none;
+}
+
+.arena-header,
+.ranking-heading {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-kicker {
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--pink);
+}
+
+.arena-header h2,
+.ranking-heading h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 25px;
+    margin-top: 8px;
+}
+
+.season-badge {
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    background: rgba(255,209,102,.06);
+    border: 1px solid rgba(255,209,102,.2);
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+.season-badge strong {
+    margin-left: 5px;
+}
+
+
+/* =========================================
+   PODIUM
+========================================= */
+
+.podium {
+    position: relative;
+    z-index: 2;
+
+    height: 490px;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 25px;
+
+    margin-top: 20px;
+}
+
+.podium-player {
+    position: relative;
+
+    width: 29%;
+    max-width: 270px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: .4s ease;
+}
+
+.podium-player:hover {
+    transform: translateY(-12px);
+}
+
+.rank-orbit {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+}
+
+.rank-orbit::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        inset 0 0 25px rgba(255,255,255,.03),
+        0 0 35px rgba(91,140,255,.08);
+}
+
+.first .rank-orbit::before {
+    border-color: rgba(255,209,102,.3);
+
+    box-shadow:
+        inset 0 0 35px rgba(255,209,102,.06),
+        0 0 55px rgba(255,209,102,.18);
+}
+
+.avatar {
+    position: relative;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 31% 31% 42% 42%;
+
+    transform: rotate(-2deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #30303a,
+            #111116
+        );
+
+    border: 2px solid rgba(255,255,255,.14);
+
+    box-shadow:
+        inset 8px 8px 18px rgba(255,255,255,.08),
+        inset -8px -8px 18px rgba(0,0,0,.5),
+        0 12px 30px rgba(0,0,0,.45);
+
+    overflow: hidden;
+}
+
+.avatar::before {
+    content: "";
+
+    position: absolute;
+
+    width: 110%;
+    height: 45%;
+
+    top: -10px;
+    left: -5%;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    transform: rotate(-8deg);
+}
+
+.avatar-gold {
+    border-color: rgba(255,209,102,.65);
+
+    box-shadow:
+        inset 8px 8px 18px rgba(255,255,255,.12),
+        inset -8px -8px 18px rgba(0,0,0,.5),
+        0 0 35px rgba(255,209,102,.25);
+}
+
+.avatar-blue {
+    border-color: rgba(91,140,255,.55);
+
+    box-shadow:
+        inset 8px 8px 18px rgba(255,255,255,.1),
+        inset -8px -8px 18px rgba(0,0,0,.5),
+        0 0 30px rgba(91,140,255,.2);
+}
+
+.avatar-pink {
+    border-color: rgba(255,79,163,.55);
+
+    box-shadow:
+        inset 8px 8px 18px rgba(255,255,255,.1),
+        inset -8px -8px 18px rgba(0,0,0,.5),
+        0 0 30px rgba(255,79,163,.2);
+}
+
+.avatar-purple {
+    background: linear-gradient(145deg,#46326a,#15121c);
+}
+
+.avatar-orange {
+    background: linear-gradient(145deg,#70452d,#17110e);
+}
+
+.avatar-green {
+    background: linear-gradient(145deg,#245d42,#101812);
+}
+
+
+/* CSS CHARACTER FACE */
+
+.avatar-eye {
+    position: absolute;
+
+    width: 12px;
+    height: 7px;
+
+    top: 39px;
+
+    border-radius: 50%;
+
+    background: #f5f5f5;
+
+    box-shadow:
+        0 0 7px currentColor;
+}
+
+.eye-left {
+    left: 23px;
+}
+
+.eye-right {
+    right: 23px;
+}
+
+.avatar-mask {
+    position: absolute;
+
+    left: 50%;
+    bottom: 12px;
+
+    width: 48px;
+    height: 13px;
+
+    transform: translateX(-50%);
+
+    border-radius: 4px 4px 10px 10px;
+
+    background: #09090d;
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.helmet-top {
+    position: absolute;
+
+    width: 62px;
+    height: 14px;
+
+    top: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(255,209,102,.5);
+
+    filter: blur(1px);
+}
+
+
+.rank-number {
+    position: absolute;
+
+    right: -3px;
+    bottom: 5px;
+
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #111117;
+    border: 1px solid rgba(255,255,255,.15);
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.first .rank-number {
+    color: var(--gold);
+}
+
+.player-name {
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.player-title {
+    margin-top: 5px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--muted);
+}
+
+.champion-title {
+    color: var(--gold);
+}
+
+.score-value {
+    margin-top: 13px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.score-value small {
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.champion-score {
+    color: var(--gold);
+    font-size: 22px;
+}
+
+
+/* =========================================
+   PODIUM BLOCKS
+========================================= */
+
+.podium-block {
+    width: 100%;
+    height: 155px;
+
+    margin-top: 15px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 25px;
+
+    border-radius: 18px 18px 0 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #22222b,
+            #111117
+        );
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    box-shadow:
+        inset 0 8px 20px rgba(255,255,255,.025),
+        0 -10px 35px rgba(0,0,0,.2);
+}
+
+.podium-block span {
+    font-family: "Orbitron", sans-serif;
+    font-size: 42px;
+
+    color: rgba(255,255,255,.06);
+}
+
+.second .podium-block {
+    height: 120px;
+}
+
+.third .podium-block {
+    height: 95px;
+}
+
+.champion-block {
+    height: 185px;
+
+    border-color: rgba(255,209,102,.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,209,102,.12),
+            #14130f
+        );
+
+    box-shadow:
+        inset 0 8px 25px rgba(255,209,102,.05),
+        0 -15px 45px rgba(255,209,102,.08);
+}
+
+.champion-block span {
+    color: rgba(255,209,102,.15);
+}
+
+.crown {
+    position: absolute;
+
+    top: -22px;
+
+    font-size: 30px;
+    color: var(--gold);
+
+    text-shadow:
+        0 0 15px rgba(255,209,102,.6),
+        0 0 35px rgba(255,209,102,.3);
+
+    animation: crownFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes crownFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(4deg);
+    }
+}
+
+
+/* ROTATING ORBITS */
+
+.orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,209,102,.3);
+}
+
+.orbit-one {
+    inset: -10px;
+    animation: orbitRotate 7s linear infinite;
+}
+
+.orbit-two {
+    inset: -20px;
+
+    border-color: rgba(255,79,163,.18);
+
+    animation: orbitRotate 11s linear infinite reverse;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.leaderboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0 70px;
+}
+
+.stat-card {
+    position: relative;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #101015;
+    border: 1px solid rgba(255,255,255,.06);
+
+    overflow: hidden;
+
+    transition: .3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255,255,255,.13);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25);
+}
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    right: -25px;
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    background: rgba(91,140,255,.08);
+}
+
+.stat-label {
+    display: block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--muted);
+}
+
+.stat-card strong {
+    display: block;
+
+    margin: 9px 0;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 28px;
+}
+
+.stat-detail {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #62626d;
+}
+
+.highlight-stat {
+    border-color: rgba(255,209,102,.16);
+}
+
+.highlight-stat strong {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   RANKING SECTION
+========================================= */
+
+.ranking-section {
+    margin-top: 30px;
+}
+
+.ranking-heading {
+    margin-bottom: 22px;
+}
+
+.ranking-heading h2 {
+    font-size: 30px;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--green);
+}
+
+.live-indicator span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+    50% {
+        opacity: .35;
+        transform: scale(.7);
+    }
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.ranking-header {
+    display: grid;
+
+    grid-template-columns:
+        90px
+        minmax(250px, 1fr)
+        130px
+        170px
+        130px;
+
+    padding: 0 25px 12px;
+
+    color: #565660;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   PLAYER ROW
+========================================= */
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.player-row {
+    display: grid;
+
+    grid-template-columns:
+        90px
+        minmax(250px, 1fr)
+        130px
+        170px
+        130px;
+
+    align-items: center;
+
+    min-height: 78px;
+
+    padding: 0 25px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.015)
+        );
+
+    border: 1px solid rgba(255,255,255,.045);
+
+    transition:
+        transform .25s ease,
+        border .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.player-row:hover {
+    transform: translateX(7px);
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255,79,163,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border-color: rgba(255,79,163,.2);
+
+    box-shadow:
+        -5px 0 25px rgba(255,79,163,.08);
+}
+
+.rank-one {
+    border-color: rgba(255,209,102,.14);
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255,209,102,.07),
+            rgba(255,255,255,.015)
+        );
+}
+
+.rank-cell {
+    font-family: "Orbitron", sans-serif;
+}
+
+.rank-medal {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+}
+
+.gold-medal {
+    color: #111;
+    background: var(--gold);
+
+    box-shadow:
+        0 0 20px rgba(255,209,102,.2);
+}
+
+.silver-medal {
+    color: #15151a;
+    background: #c7cad1;
+}
+
+.bronze-medal {
+    color: #1b1008;
+    background: #c7824c;
+}
+
+.rank-number-small {
+    color: #696974;
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+}
+
+
+/* PLAYER */
+
+.player-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mini-avatar {
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 14px;
+
+    transform: none;
+}
+
+.mini-avatar .avatar-eye {
+    width: 6px;
+    height: 4px;
+
+    top: 20px;
+}
+
+.mini-avatar .eye-left {
+    left: 12px;
+}
+
+.mini-avatar .eye-right {
+    right: 12px;
+}
+
+.mini-avatar .avatar-mask {
+    width: 24px;
+    height: 7px;
+
+    bottom: 7px;
+}
+
+.player-cell strong {
+    display: block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.player-cell small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+    color: #656570;
+}
+
+
+/* LEVEL */
+
+.level-badge {
+    display: inline-flex;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.05);
+
+    color: #858590;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+}
+
+
+/* SCORE */
+
+.score-cell {
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.rank-one .score-cell {
+    color: var(--gold);
+}
+
+
+/* STATUS */
+
+.status-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    color: #656570;
+}
+
+.online-status,
+.offline-status {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+}
+
+.online-status {
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+}
+
+.offline-status {
+    background: #555560;
+}
+
+
+/* =========================================
+   YOUR RANK
+========================================= */
+
+.your-rank {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(91,140,255,.1),
+            rgba(255,79,163,.05)
+        );
+
+    border: 1px solid rgba(91,140,255,.2);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2);
+}
+
+.your-rank-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.your-rank-number {
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.your-rank-left span {
+    display: block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #686874;
+}
+
+.your-rank-left strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+}
+
+.your-score {
+    text-align: right;
+}
+
+.your-score small {
+    display: block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #686874;
+}
+
+.your-score strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+
+    color: var(--green);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .ranking-header,
+    .player-row {
+        grid-template-columns:
+            70px
+            1fr
+            100px
+            130px;
+    }
+
+    .ranking-header span:nth-child(3),
+    .player-row .level-cell {
+        display: none;
+    }
+
+    .leaderboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .champion-arena {
+        padding: 25px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .leaderboard-page {
+        width: 94%;
+        padding-top: 65px;
+    }
+
+    .leaderboard-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-left {
+        width: 100%;
+    }
+
+    .control-group {
+        flex: 1;
+    }
+
+    .control-group select {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .podium {
+        gap: 8px;
+    }
+
+    .podium-player {
+        width: 32%;
+    }
+
+    .rank-orbit {
+        width: 105px;
+        height: 105px;
+    }
+
+    .avatar {
+        width: 65px;
+        height: 65px;
+    }
+
+    .player-name {
+        font-size: 14px;
+    }
+
+    .score-value {
+        font-size: 13px;
+    }
+
+    .podium-block {
+        height: 110px;
+    }
+
+    .second .podium-block {
+        height: 90px;
+    }
+
+    .third .podium-block {
+        height: 70px;
+    }
+
+    .champion-block {
+        height: 135px;
+    }
+
+    .leaderboard-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ranking-header,
+    .player-row {
+        grid-template-columns:
+            55px
+            1fr
+            100px;
+    }
+
+    .ranking-header span:nth-child(4),
+    .player-row .score-cell {
+        display: none;
+    }
+
+    .ranking-header span:nth-child(5),
+    .player-row .status-cell {
+        display: none;
+    }
+
+    .your-rank {
+        padding: 18px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .leaderboard-hero h1 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .leaderboard-hero {
+        padding-top: 40px;
+    }
+
+    .leaderboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .champion-arena {
+        padding: 20px 12px;
+    }
+
+    .arena-header h2,
+    .ranking-heading h2 {
+        font-size: 19px;
+    }
+
+    .season-badge {
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    .podium {
+        height: 410px;
+    }
+
+    .rank-orbit {
+        width: 80px;
+        height: 80px;
+    }
+
+    .avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .rank-number {
+        width: 27px;
+        height: 27px;
+        font-size: 8px;
+    }
+
+    .player-name {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .player-title {
+        font-size: 7px;
+    }
+
+    .score-value {
+        font-size: 10px;
+    }
+
+    .champion-score {
+        font-size: 12px;
+    }
+
+    .podium-block {
+        height: 80px;
+    }
+
+    .second .podium-block {
+        height: 65px;
+    }
+
+    .third .podium-block {
+        height: 50px;
+    }
+
+    .champion-block {
+        height: 105px;
+    }
+
+    .ranking-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .player-row {
+        min-height: 68px;
+        padding: 0 12px;
+    }
+
+    .player-cell {
+        gap: 9px;
+    }
+
+    .mini-avatar {
+        width: 37px;
+        height: 37px;
+    }
+
+    .player-cell strong {
+        font-size: 10px;
+    }
+
+    .player-cell small {
+        font-size: 8px;
+    }
+
+    .your-rank {
+        gap: 10px;
+    }
+
+    .your-rank-number {
+        font-size: 18px;
+    }
+
+    .your-rank-left span {
+        font-size: 7px;
+    }
+
+    .your-score strong {
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================
+   CSS GAMING CHARACTERS
+========================================= */
+
+.avatar-mask {
+    position: absolute !important;
+
+    width: 28px !important;
+    height: 8px !important;
+
+    left: 50% !important;
+    top: 68% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    background: #000000 !important;
+
+    border: none !important;
+    border-radius: 0 0 12px 12px !important;
+
+    z-index: 20 !important;
+
+    box-shadow: none !important;
+}
+
+.avatar-mask::before,
+.avatar-mask::after {
+    content: none !important;
+}
+
+
+/* Mini avatars */
+.mini-avatar .avatar-mask {
+    width: 14px !important;
+    height: 5px !important;
+
+    left: 50% !important;
+    top: 68% !important;
+
+    transform: translateX(-50%) !important;
+
+    background: #000000 !important;
+
+    border: none !important;
+}
+
+/* =========================================
+   EYES
+========================================= */
+
+.avatar-eye {
+    position: absolute;
+
+    width: 12px;
+    height: 8px;
+
+    top: 48%;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 6px white;
+}
+
+.eye-left {
+    left: 31%;
+}
+
+.eye-right {
+    right: 31%;
+}
+
+
+/* =========================================
+   EYE PUPILS
+========================================= */
+
+.avatar-eye::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 6px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #111;
+
+    z-index: 6;
+}
+
+
+/* =========================================
+   MOUTH / MASK
+========================================= */
+
+/* =========================================
+   PROPERLY ALIGNED MOUTH / MASK
+========================================= */
+
+.avatar-mask {
+    position: absolute;
+
+    width: 34%;
+    height: 11%;
+
+    left: 33%;
+    top: 68%;
+
+    border-radius: 0 0 10px 10px;
+
+    background: #111117;
+
+    border: 1.5px solid rgba(255,255,255,.18);
+
+    z-index: 6;
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,.08),
+        0 2px 4px rgba(0,0,0,.35);
+}
+
+/* Small glowing mouth line */
+.avatar-mask::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    height: 2px;
+
+    left: 27.5%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.45);
+}
+
+
+/* =========================================
+   MINI AVATAR MOUTH
+========================================= */
+
+.mini-avatar .avatar-mask {
+    width: 34%;
+    height: 10%;
+
+    left: 33%;
+    top: 68%;
+
+    bottom: auto;
+
+    border-width: 1px;
+}
+
+.mini-avatar .avatar-mask::after {
+    height: 1px;
+}
+
+/* =========================================
+   FIX MOUTH ALIGNMENT
+========================================= */
+
+.avatar {
+    position: relative !important;
+}
+
+.avatar-mask {
+    position: absolute !important;
+
+    width: 30px !important;
+    height: 8px !important;
+
+    left: 50% !important;
+    top: 68% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    border-radius: 0 0 12px 12px !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-bottom: 3px solid #111117 !important;
+
+    z-index: 20 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Remove any old pseudo-element */
+.avatar-mask::before,
+.avatar-mask::after {
+    display: none !important;
+}
+
+
+/* =========================================
+   MINI AVATAR
+========================================= */
+
+.mini-avatar {
+    position: relative !important;
+}
+
+.mini-avatar .avatar-mask {
+    position: absolute !important;
+
+    width: 14px !important;
+    height: 5px !important;
+
+    left: 50% !important;
+    top: 68% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    border: none !important;
+    border-bottom: 2px solid #111117 !important;
+
+    background: transparent !important;
+
+    z-index: 20 !important;
+}
+/* =========================================
+   HAIR
+========================================= */
+
+.avatar .helmet-top {
+    position: absolute;
+
+    width: 72%;
+    height: 35%;
+
+    left: 14%;
+    top: 5%;
+
+    border-radius: 50% 50% 25% 25%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252531,
+            #09090e
+        );
+
+    z-index: 4;
+
+    border: 2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        inset 5px 5px 10px rgba(255,255,255,.08);
+}
+
+
+/* =========================================
+   GOLD CHARACTER — ZERO
+========================================= */
+
+.avatar-gold {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #fff2a8,
+            transparent 22%
+        ),
+        linear-gradient(
+            145deg,
+            #6d571f,
+            #211b0d
+        );
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 25px rgba(255,209,102,.35),
+        inset 6px 6px 15px rgba(255,255,255,.12),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-gold .helmet-top {
+    background:
+        linear-gradient(
+            145deg,
+            #fff0a0,
+            #b98b25
+        );
+
+    box-shadow:
+        0 0 15px rgba(255,209,102,.5);
+}
+
+.avatar-gold .avatar-mask {
+    border-color: var(--gold);
+}
+
+
+/* =========================================
+   BLUE CHARACTER — NOVA
+========================================= */
+
+.avatar-blue {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #8fb0ff,
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #263d78,
+            #0c1226
+        );
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 25px rgba(91,140,255,.3),
+        inset 6px 6px 15px rgba(255,255,255,.1),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-blue .helmet-top {
+    background:
+        linear-gradient(
+            145deg,
+            #78a0ff,
+            #263d8b
+        );
+}
+
+.avatar-blue .avatar-mask {
+    border-color: var(--blue);
+}
+
+
+/* =========================================
+   PINK CHARACTER — RUSH
+========================================= */
+
+.avatar-pink {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #ff9bca,
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #72254d,
+            #1c0c15
+        );
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 25px rgba(255,79,163,.3),
+        inset 6px 6px 15px rgba(255,255,255,.1),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-pink .helmet-top {
+    background:
+        linear-gradient(
+            145deg,
+            #ff75b5,
+            #8d255b
+        );
+}
+
+.avatar-pink .avatar-mask {
+    border-color: var(--pink);
+}
+
+
+/* =========================================
+   PURPLE — SHADOW
+========================================= */
+
+.avatar-purple {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #b48cff,
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #50317e,
+            #120c1c
+        );
+
+    border-color: #9a6cff;
+
+    box-shadow:
+        0 0 22px rgba(154,108,255,.3),
+        inset 6px 6px 15px rgba(255,255,255,.1),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-purple .helmet-top {
+    background: linear-gradient(
+        145deg,
+        #9d6fff,
+        #48217a
+    );
+}
+
+
+/* =========================================
+   ORANGE — BLAZE
+========================================= */
+
+.avatar-orange {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #ffb36a,
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #8a4520,
+            #1c0e08
+        );
+
+    border-color: #ff8a3d;
+
+    box-shadow:
+        0 0 25px rgba(255,138,61,.3),
+        inset 6px 6px 15px rgba(255,255,255,.1),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-orange .helmet-top {
+    background: linear-gradient(
+        145deg,
+        #ff9b42,
+        #9a3c16
+    );
+}
+
+
+/* =========================================
+   GREEN — PHANTOM
+========================================= */
+
+.avatar-green {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #83ffb0,
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #226b48,
+            #081a11
+        );
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 25px rgba(92,255,138,.25),
+        inset 6px 6px 15px rgba(255,255,255,.1),
+        inset -8px -8px 15px rgba(0,0,0,.5);
+}
+
+.avatar-green .helmet-top {
+    background: linear-gradient(
+        145deg,
+        #59e98b,
+        #197342
+    );
+}
+
+
+/* =========================================
+   MAKE MINI AVATARS VISIBLE
+========================================= */
+
+.mini-avatar::after {
+    width: 70%;
+    height: 70%;
+
+    left: 15%;
+    top: 20%;
+
+    border-width: 1px;
+}
+
+.mini-avatar .helmet-top {
+    width: 72%;
+    height: 32%;
+
+    left: 14%;
+    top: 7%;
+}
+
+.mini-avatar .avatar-eye {
+    width: 6px;
+    height: 5px;
+
+    top: 47%;
+}
+
+.mini-avatar .avatar-mask {
+    width: 40%;
+    height: 14%;
+
+    left: 30%;
+    bottom: 15%;
+}
+
+
+/* =========================================
+   CHARACTER HOVER
+========================================= */
+
+.avatar,
+.mini-avatar {
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.podium-player:hover .avatar {
+    transform:
+        translateY(-5px)
+        rotate(-3deg)
+        scale(1.05);
+}
+
+.player-row:hover .mini-avatar {
+    transform:
+        rotate(-4deg)
+        scale(1.08);
+}
+
+/* =========================================
+   LEADERBOARD INTERACTIONS
+========================================= */
+
+.player-row {
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        box-shadow .25s ease;
+    cursor: pointer;
+}
+
+
+/* Filter notification */
+
+.filter-notification {
+    position: fixed;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform:
+        translate(-50%, 20px);
+
+    padding: 12px 22px;
+
+    background: #15151c;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.5);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.filter-notification.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* Score update animation */
+
+.score-updated {
+    animation:
+        scorePulse .7s ease;
+}
+
+@keyframes scorePulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+
+        text-shadow:
+            0 0 12px var(--green),
+            0 0 25px var(--green);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Page entrance */
+
+.leaderboard-ready .leaderboard-hero,
+.leaderboard-ready .champion-arena,
+.leaderboard-ready .leaderboard-content {
+    animation:
+        leaderboardFade .7s ease both;
+}
+
+@keyframes leaderboardFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   UPDATED RANKING PLAYER DISPLAY
+========================================= */
+
+.ranking-header {
+    grid-template-columns:
+        90px
+        minmax(280px, 1fr)
+        170px
+        130px;
+}
+
+.player-row {
+    grid-template-columns:
+        90px
+        minmax(280px, 1fr)
+        170px
+        130px;
+
+    min-height: 88px;
+}
+
+
+/* PLAYER INFORMATION */
+
+.player-info {
+    min-width: 0;
+}
+
+.player-info strong {
+    display: block;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #f5f5f7;
+}
+
+.player-info .game-name {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .8px;
+
+    color: var(--gold);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-info small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+    letter-spacing: 1.2px;
+
+    color: #777782;
+
+    text-transform: uppercase;
+}
+
+.title-separator {
+    margin: 0 4px;
+
+    color: #55555f;
+}
+
+
+/* SCORE */
+
+.score-cell {
+    font-size: 17px;
+    font-weight: 800;
+
+    color: #f5f5f7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+
+    .ranking-header,
+    .player-row {
+        grid-template-columns:
+            70px
+            minmax(220px, 1fr)
+            140px;
+    }
+
+    .ranking-header span:nth-child(4),
+    .player-row .status-cell {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .ranking-header,
+    .player-row {
+        grid-template-columns:
+            55px
+            1fr
+            100px;
+    }
+
+    .ranking-header span:nth-child(4),
+    .player-row .status-cell {
+        display: none;
+    }
+
+    .player-row {
+        min-height: 78px;
+        padding: 0 12px;
+    }
+
+    .player-cell {
+        gap: 10px;
+    }
+
+    .player-info strong {
+        font-size: 10px;
+    }
+
+    .player-info .game-name {
+        font-size: 8px;
+    }
+
+    .player-info small {
+        font-size: 7px;
+    }
+
+    .score-cell {
+        font-size: 13px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .ranking-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .player-row {
+        min-height: 72px;
+    }
+
+    .player-info strong {
+        font-size: 9px;
+    }
+
+    .player-info .game-name {
+        font-size: 7px;
+        letter-spacing: .5px;
+    }
+
+    .player-info small {
+        font-size: 6px;
+        letter-spacing: .7px;
+    }
+
+    .score-cell {
+        font-size: 12px;
+    }
+
+}

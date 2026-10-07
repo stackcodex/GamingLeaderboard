@@ -1,0 +1,29 @@
+# Java / Maven
+backend/target/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+*.env
+application-local.properties
+
+# Node
+node_modules/
+
+# Build files
+dist/
+build/
+
+backend/error.txt

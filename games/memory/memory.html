@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Match | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="memory.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="game-nav">
+
+        <a href="../../index.html" class="brand">
+
+            <span class="saturn-logo">
+                <span class="planet"></span>
+                <span class="ring"></span>
+            </span>
+
+            <span>GAMECORE</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="../../index.html">Home</a>
+            <a href="../../games.html">Games</a>
+            <a href="../../leaderboard.html">Leaderboard</a>
+            <a href="../../profile.html">Profile</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- GAME HEADER -->
+    <main class="memory-page">
+
+        <section class="game-header">
+
+            <div>
+
+                <div class="game-label">
+
+                    <span class="live-dot"></span>
+
+                    PLAYABLE GAME
+
+                </div>
+
+                <h1>
+                    MEMORY <span>MATCH</span>
+                </h1>
+
+                <p>
+                    Test your memory, find matching pairs and complete
+                    the board with the highest score possible.
+                </p>
+
+            </div>
+
+            <div class="game-actions">
+
+                <button
+                    class="restart-btn"
+                    onclick="restartGame()"
+                >
+                    ↻ RESTART
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="memory-stats">
+
+            <div class="stat-box">
+
+                <span>SCORE</span>
+
+                <strong id="score">0</strong>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>MOVES</span>
+
+                <strong id="moves">0</strong>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>MATCHED</span>
+
+                <strong id="matched">0 / 8</strong>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>TIME</span>
+
+                <strong id="timer">00:00</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME AREA -->
+        <section class="memory-layout">
+
+            <div class="game-board-wrapper">
+
+                <div
+                    id="gameBoard"
+                    class="memory-board"
+                ></div>
+
+
+                <!-- START OVERLAY -->
+                <div
+                    id="startOverlay"
+                    class="game-overlay"
+                >
+
+                    <div class="overlay-content">
+
+                        <div class="memory-icon">
+                            ✦
+                        </div>
+
+                        <h2>READY?</h2>
+
+                        <p>
+                            Find all 8 matching pairs.
+                            <br>
+                            Fewer moves = higher score.
+                        </p>
+
+                        <button
+                            onclick="startGame()"
+                            class="primary-btn"
+                        >
+                            START GAME
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WIN OVERLAY -->
+                <div
+                    id="winOverlay"
+                    class="game-overlay hidden"
+                >
+
+                    <div class="overlay-content">
+
+                        <div class="win-icon">
+                            ★
+                        </div>
+
+                        <h2>MEMORY MASTER</h2>
+
+                        <p>
+                            You matched every pair.
+                        </p>
+
+
+                        <div class="final-score">
+
+                            <span>FINAL SCORE</span>
+
+                            <strong id="finalScore">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="win-stats">
+
+                            <div>
+
+                                <span>MOVES</span>
+
+                                <strong id="finalMoves">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>TIME</span>
+
+                                <strong id="finalTime">
+                                    00:00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overlay-buttons">
+
+                            <button
+                                onclick="restartGame()"
+                                class="primary-btn"
+                            >
+                                PLAY AGAIN
+                            </button>
+
+                            <button
+                                onclick="submitScore()"
+                                class="secondary-btn"
+                            >
+                                SUBMIT SCORE
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIDE PANEL -->
+            <aside class="memory-side">
+
+
+                <!-- HOW TO PLAY -->
+                <div class="info-card">
+
+                    <h3>HOW TO PLAY</h3>
+
+
+                    <div class="instruction">
+
+                        <span>01</span>
+
+                        <p>
+                            Click a card to reveal its symbol.
+                        </p>
+
+                    </div>
+
+
+                    <div class="instruction">
+
+                        <span>02</span>
+
+                        <p>
+                            Click another card to find its match.
+                        </p>
+
+                    </div>
+
+
+                    <div class="instruction">
+
+                        <span>03</span>
+
+                        <p>
+                            Match all 8 pairs to finish.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SCORING -->
+                <div class="info-card scoring-card">
+
+                    <h3>SCORING</h3>
+
+
+                    <div class="score-rule">
+
+                        <span>Correct Match</span>
+
+                        <strong>+100</strong>
+
+                    </div>
+
+
+                    <div class="score-rule">
+
+                        <span>Wrong Pair</span>
+
+                        <strong>-10</strong>
+
+                    </div>
+
+
+                    <div class="score-rule">
+
+                        <span>Fast Finish</span>
+
+                        <strong>BONUS</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OBJECTIVE -->
+                <div class="info-card objective-card">
+
+                    <div class="objective-icon">
+                        ◈
+                    </div>
+
+                    <div>
+
+                        <h3>OBJECTIVE</h3>
+
+                        <p>
+                            Complete the board using the fewest
+                            moves and fastest time.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- SCORE SUBMISSION RESULT MODAL -->
+    <div
+        class="score-result-modal hidden"
+        id="scoreResultModal"
+    >
+
+        <div class="score-result-card">
+
+            <div class="success-icon">
+
+                <span>✓</span>
+
+            </div>
+
+
+            <span
+                class="result-status"
+                id="scoreResultStatus"
+            >
+                NEW BEST SCORE
+            </span>
+
+
+            <h2>
+                RUN COMPLETE
+            </h2>
+
+
+            <div class="result-game-name">
+                MEMORY MATCH
+            </div>
+
+
+            <div class="result-score-box">
+
+                <span>YOUR SCORE</span>
+
+                <strong id="submittedScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <p id="scoreResultMessage">
+                Your score has been added to the GAMECORE leaderboard.
+            </p>
+
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="viewLeaderboardBtn"
+                    class="result-primary-btn"
+                >
+                    VIEW LEADERBOARD
+                </button>
+
+
+                <button
+                    type="button"
+                    id="closeResultBtn"
+                    class="result-secondary-btn"
+                >
+                    DONE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOAD JAVASCRIPT LAST -->
+    <script src="memory.js"></script>
+
+</body>
+</html>

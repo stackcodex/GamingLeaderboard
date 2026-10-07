@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | GAMECORE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <!-- BACKGROUND -->
+
+    <div class="ambient ambient-gold"></div>
+    <div class="ambient ambient-pink"></div>
+    <div class="ambient ambient-blue"></div>
+    <div class="ambient ambient-green"></div>
+
+    <div class="grid-floor"></div>
+
+    <div class="floating-orb orb-one"></div>
+    <div class="floating-orb orb-two"></div>
+    <div class="floating-orb orb-three"></div>
+
+    <div class="floating-ring ring-one"></div>
+    <div class="floating-ring ring-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="auth-navbar">
+
+        <a href="index.html" class="auth-brand">
+
+            <div class="saturn-logo">
+
+                <div class="saturn-ring"></div>
+
+                <div class="saturn-planet">
+                    <span></span>
+                </div>
+
+            </div>
+
+            <span>GAMECORE</span>
+
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="auth-main">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="auth-visual">
+
+            <div class="visual-content">
+
+                <div class="live-badge">
+                    <span></span>
+                    JOIN THE GAMING NETWORK
+                </div>
+
+                <h1>
+                    BUILD.
+                    <br>
+                    <span>PLAY.</span>
+                    <br>
+                    CONQUER.
+                </h1>
+
+                <p>
+                    Create your GAMECORE account and start
+                    your journey toward the top of the leaderboard.
+                </p>
+
+            </div>
+
+
+            <!-- 3D CORE -->
+
+            <div class="core-scene">
+
+                <div class="core-orbit orbit-one"></div>
+                <div class="core-orbit orbit-two"></div>
+                <div class="core-orbit orbit-three"></div>
+
+                <div class="core-glow"></div>
+
+                <div class="core">
+
+                    <div class="core-inner">
+                        JOIN
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING CARDS -->
+
+                <div class="float-card card-score">
+
+                    <small>PLAYERS</small>
+
+                    <strong>10K+</strong>
+
+                    <span>ACTIVE</span>
+
+                </div>
+
+
+                <div class="float-card card-rank">
+
+                    <small>GAMES</small>
+
+                    <strong>10</strong>
+
+                    <span>READY</span>
+
+                </div>
+
+
+                <div class="float-card card-games">
+
+                    <small>RANKINGS</small>
+
+                    <strong>LIVE</strong>
+
+                    <span>COMPETE</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REGISTER CARD -->
+
+        <section class="auth-section">
+
+            <div class="auth-card">
+
+
+                <!-- HEADER -->
+
+                <div class="auth-card-top">
+
+                    <div class="auth-icon">
+
+                        <div class="user-head"></div>
+                        <div class="user-body"></div>
+
+                    </div>
+
+                    <div>
+
+                        <span class="auth-label">
+                            NEW PLAYER
+                        </span>
+
+                        <h2>
+                            CREATE ACCOUNT
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="auth-description">
+                    Create your player profile and enter
+                    the GAMECORE arena.
+                </p>
+
+
+                <!-- REGISTER FORM -->
+
+                <form id="registerForm">
+
+
+                    <!-- PLAYER NAME -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            PLAYER NAME
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                ◆
+                            </span>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Choose your player name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            EMAIL ADDRESS
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                @
+                            </span>
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            PASSWORD
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                •
+                            </span>
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                placeholder="Create a password"
+                                required
+                                minlength="6"
+                            >
+
+                            <button
+                                type="button"
+                                id="toggleRegisterPassword"
+                                class="password-toggle"
+                            >
+                                SHOW
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            CONFIRM PASSWORD
+                        </label>
+
+                        <div class="input-box">
+
+                            <span class="input-symbol">
+                                •
+                            </span>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="toggleConfirmPassword"
+                                class="password-toggle"
+                            >
+                                SHOW
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <label class="remember terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+                            I agree to the GAMECORE terms
+                            and conditions.
+                        </span>
+
+                    </label>
+
+
+                    <!-- CREATE ACCOUNT -->
+
+                    <button
+                        type="submit"
+                        class="primary-auth-btn register-submit"
+                    >
+
+                        <span>
+                            CREATE ACCOUNT
+                        </span>
+
+                        <b>→</b>
+
+                    </button>
+
+                </form>
+
+
+                <!-- DIVIDER -->
+
+                <div class="auth-divider">
+
+                    <span></span>
+
+                    ALREADY A PLAYER?
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- SIGN IN -->
+
+                <button
+                    type="button"
+                    class="create-account-btn signin-secondary"
+                    id="signInBtn"
+                >
+
+                    <span>
+                        SIGN IN TO EXISTING ACCOUNT
+                    </span>
+
+                </button>
+
+
+                <!-- SECURITY -->
+
+                <p class="secure-text">
+                    🔒 Your account information is securely protected.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>

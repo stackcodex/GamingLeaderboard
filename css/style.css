@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap');
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg: #050507;
+
+    --surface: #0d0d12;
+    --surface-light: #15151c;
+
+    --gold: #ffd166;
+    --pink: #ff4fa3;
+    --green: #5cff8a;
+    --blue: #5b8cff;
+
+    --white: #f7f7fa;
+    --muted: #858591;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--bg);
+
+    color: var(--white);
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND ATMOSPHERE
+========================================= */
+
+.ambient {
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(140px);
+
+    opacity: 0.11;
+
+    pointer-events: none;
+
+    z-index: -5;
+
+}
+
+.ambient-gold {
+
+    background: var(--gold);
+
+    top: -250px;
+    left: -200px;
+
+}
+
+.ambient-pink {
+
+    background: var(--pink);
+
+    right: -250px;
+    top: 25%;
+
+}
+
+.ambient-blue {
+
+    background: var(--blue);
+
+    left: 20%;
+    bottom: -300px;
+
+}
+
+.ambient-green {
+
+    background: var(--green);
+
+    right: 25%;
+    bottom: 15%;
+
+    opacity: 0.045;
+
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+}
+
+.particles span {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0.35;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.8);
+
+    animation:
+        particleFloat
+        linear
+        infinite;
+
+}
+
+.particles span:nth-child(1) {
+    left: 8%;
+    top: 20%;
+    animation-duration: 9s;
+}
+
+.particles span:nth-child(2) {
+    left: 17%;
+    top: 70%;
+    animation-duration: 13s;
+}
+
+.particles span:nth-child(3) {
+    left: 28%;
+    top: 40%;
+    animation-duration: 11s;
+}
+
+.particles span:nth-child(4) {
+    left: 39%;
+    top: 80%;
+    animation-duration: 15s;
+}
+
+.particles span:nth-child(5) {
+    left: 48%;
+    top: 15%;
+    animation-duration: 10s;
+}
+
+.particles span:nth-child(6) {
+    left: 57%;
+    top: 55%;
+    animation-duration: 12s;
+}
+
+.particles span:nth-child(7) {
+    left: 68%;
+    top: 30%;
+    animation-duration: 14s;
+}
+
+.particles span:nth-child(8) {
+    left: 76%;
+    top: 75%;
+    animation-duration: 10s;
+}
+
+.particles span:nth-child(9) {
+    left: 86%;
+    top: 18%;
+    animation-duration: 12s;
+}
+
+.particles span:nth-child(10) {
+    left: 92%;
+    top: 55%;
+    animation-duration: 16s;
+}
+
+.particles span:nth-child(11) {
+    left: 32%;
+    top: 10%;
+    animation-duration: 14s;
+}
+
+.particles span:nth-child(12) {
+    left: 63%;
+    top: 90%;
+    animation-duration: 11s;
+}
+
+@keyframes particleFloat {
+
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.4;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    width: min(1200px, 92%);
+
+    height: 78px;
+
+    margin: 20px auto;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 100;
+
+    border-radius: 23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,25,32,0.9),
+            rgba(10,10,14,0.82)
+        );
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,0.45),
+
+        inset 0 1px 1px
+        rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(20px);
+
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+/* =========================================
+   SATURN LOGO
+========================================= */
+
+.saturn-logo {
+
+    width: 45px;
+    height: 45px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+/* planet */
+
+.saturn-planet {
+
+    width: 27px;
+    height: 27px;
+
+    position: absolute;
+
+    z-index: 3;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff 0%,
+            #ffe7a3 8%,
+            #ffd166 30%,
+            #d99b28 60%,
+            #754d0d 100%
+        );
+
+    box-shadow:
+
+        0 0 8px rgba(255,209,102,0.9),
+
+        0 0 20px rgba(255,209,102,0.55),
+
+        0 0 45px rgba(255,209,102,0.2),
+
+        inset -5px -6px 8px
+        rgba(70,35,0,0.4);
+
+}
+
+
+/* planet highlight */
+
+.planet-highlight {
+
+    width: 7px;
+    height: 7px;
+
+    position: absolute;
+
+    top: 5px;
+    left: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    filter: blur(1px);
+
+    opacity: 0.9;
+
+}
+
+
+/* Saturn ring */
+
+.saturn-ring {
+
+    width: 47px;
+    height: 17px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-20deg);
+
+    border-radius: 50%;
+
+    border: 3px solid var(--gold);
+
+    box-shadow:
+
+        0 0 5px var(--gold),
+
+        0 0 12px rgba(255,209,102,0.75),
+
+        0 0 25px rgba(255,209,102,0.25);
+
+}
+
+
+/* back ring */
+
+.ring-back {
+
+    z-index: 1;
+
+    border-color:
+        rgba(255,209,102,0.65);
+
+}
+
+
+/* front ring */
+
+.ring-front {
+
+    z-index: 5;
+
+    clip-path:
+        polygon(
+            0 50%,
+            100% 50%,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+
+/* =========================================
+   BRAND TEXT
+========================================= */
+
+.brand-name {
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+.brand-name span {
+
+    color: white;
+
+}
+
+.brand-name {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+
+    display: flex;
+
+    gap: 32px;
+
+}
+
+.nav-links a {
+
+    position: relative;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color: white;
+
+}
+
+.nav-links a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -10px;
+
+    width: 5px;
+    height: 5px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 10px var(--pink),
+        0 0 20px var(--pink);
+
+}
+
+
+/* =========================================
+   SIGN IN
+========================================= */
+
+.login-btn {
+
+    padding: 11px 19px;
+
+    border-radius: 12px;
+
+    border: 1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+
+}
+
+.login-btn:hover {
+
+    background: var(--pink);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,79,163,0.35);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-btn,
+.secondary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 22px;
+
+    border-radius: 14px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.35s ease;
+
+}
+
+.primary-btn {
+
+    background: var(--pink);
+
+    color: white;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,79,163,0.25),
+
+        0 12px 35px
+        rgba(255,79,163,0.18);
+
+}
+
+.primary-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,79,163,0.5),
+
+        0 15px 45px
+        rgba(255,79,163,0.25);
+
+}
+
+.secondary-btn {
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+}
+
+.secondary-btn:hover {
+
+    border-color:
+        rgba(91,140,255,0.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(91,140,255,0.12);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section-heading {
+
+    margin-bottom: 35px;
+
+}
+
+.section-heading > span {
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+.section-heading h2 {
+
+    margin-top: 8px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(25px, 4vw, 38px);
+
+}
+
+.section-heading em {
+
+    color: var(--pink);
+
+    font-style: normal;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    width: min(1200px, 92%);
+
+    margin: 80px auto 30px;
+
+    padding: 25px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.06);
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+/* footer logo */
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-weight: 800;
+
+}
+
+.footer-logo span {
+
+    color: var(--gold);
+
+}
+
+
+/* mini Saturn */
+
+.mini-saturn {
+
+    width: 24px;
+    height: 24px;
+
+    position: relative;
+
+}
+
+.mini-planet {
+
+    width: 13px;
+    height: 13px;
+
+    position: absolute;
+
+    top: 6px;
+    left: 6px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 0 12px var(--gold);
+
+}
+
+.mini-ring {
+
+    width: 24px;
+    height: 9px;
+
+    position: absolute;
+
+    top: 8px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--gold);
+
+    transform: rotate(-20deg);
+
+}
+
+
+/* footer links */
+
+.footer-links {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+.footer-links a:hover {
+
+    color: white;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+
+        width: 94%;
+
+        padding: 0 14px;
+
+    }
+
+    .brand-name {
+
+        font-size: 13px;
+
+    }
+
+    .login-btn {
+
+        padding: 9px 12px;
+
+    }
+
+}

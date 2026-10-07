@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAMECORE | Snake Rush</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic2.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="snake.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="../../index.html" class="brand">
+
+            <div class="saturn-logo">
+                <div class="saturn-ring ring-back"></div>
+
+                <div class="saturn-planet">
+                    <div class="planet-highlight"></div>
+                </div>
+
+                <div class="saturn-ring ring-front"></div>
+            </div>
+
+            <span class="brand-name">GAMECORE</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="../../index.html">Home</a>
+
+            <a href="../../games.html" class="active">
+                Games
+            </a>
+
+            <a href="../../leaderboard.html">
+                Leaderboard
+            </a>
+
+            <a href="../../profile.html">
+                Players
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- GAME -->
+
+    <main class="snake-page">
+
+        <div class="game-header">
+
+            <div>
+
+                <span class="game-label">
+                    ARCADE / PLAYABLE
+                </span>
+
+                <h1>SNAKE <span>RUSH</span></h1>
+
+                <p>
+                    Grow your snake. Collect energy.
+                    Survive as long as possible.
+                </p>
+
+            </div>
+
+            <a href="../../games.html" class="back-btn">
+                ← BACK TO GAMES
+            </a>
+
+        </div>
+
+
+        <!-- SCORE BAR -->
+
+        <section class="game-stats">
+
+            <div class="game-stat">
+
+                <span>SCORE</span>
+
+                <strong id="score">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="game-stat">
+
+                <span>HIGH SCORE</span>
+
+                <strong id="highScore">
+                    0
+                </strong>
+
+            </div>
+
+            <div class="game-stat">
+
+                <span>LENGTH</span>
+
+                <strong id="length">
+                    3
+                </strong>
+
+            </div>
+
+            <div class="game-stat">
+
+                <span>STATUS</span>
+
+                <strong id="gameStatus">
+                    READY
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME AREA -->
+
+        <section class="game-container">
+
+            <div class="game-board-wrapper">
+
+                <canvas
+                    id="snakeCanvas"
+                    width="600"
+                    height="600">
+                </canvas>
+
+
+                <!-- START SCREEN -->
+
+                <div
+                    class="game-overlay"
+                    id="startOverlay">
+
+                    <div class="overlay-content">
+
+                        <div class="snake-icon">
+                            🐍
+                        </div>
+
+                        <h2>READY?</h2>
+
+                        <p>
+                            Use the arrow keys or WASD
+                            to control the snake.
+                        </p>
+
+                        <button
+                            id="startBtn"
+                            class="game-btn">
+                            START GAME
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GAME OVER -->
+
+                <div
+                    class="game-overlay hidden"
+                    id="gameOverOverlay">
+
+                    <div class="overlay-content">
+
+                        <span class="result-label">
+                            RUN COMPLETE
+                        </span>
+
+                        <h2>GAME OVER</h2>
+
+                        <div class="final-score">
+
+                            <span>FINAL SCORE</span>
+
+                            <strong id="finalScore">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <p id="newRecord">
+                            Keep pushing your limits.
+                        </p>
+
+                        <div class="overlay-buttons">
+
+                            <button
+                                id="restartBtn"
+                                class="game-btn">
+                                PLAY AGAIN
+                            </button>
+
+                            <button
+                                id="submitScoreBtn"
+                                class="submit-btn">
+                                SUBMIT SCORE
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIDE PANEL -->
+
+            <aside class="game-side-panel">
+
+                <div class="side-card">
+
+                    <span class="side-label">
+                        HOW TO PLAY
+                    </span>
+
+                    <h3>CONTROL</h3>
+
+                    <div class="controls">
+
+                        <div class="key-row">
+                            <kbd>W</kbd>
+                            <span>Move Up</span>
+                        </div>
+
+                        <div class="key-row">
+                            <kbd>A</kbd>
+                            <span>Move Left</span>
+                        </div>
+
+                        <div class="key-row">
+                            <kbd>S</kbd>
+                            <span>Move Down</span>
+                        </div>
+
+                        <div class="key-row">
+                            <kbd>D</kbd>
+                            <span>Move Right</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="side-card">
+
+                    <span class="side-label">
+                        OBJECTIVE
+                    </span>
+
+                    <h3>COLLECT ENERGY</h3>
+
+                    <p>
+                        Collect the glowing energy
+                        core to grow your snake and
+                        increase your score.
+                    </p>
+
+                </div>
+
+
+                <div class="side-card danger-card">
+
+                    <span class="side-label">
+                        WARNING
+                    </span>
+
+                    <h3>AVOID COLLISION</h3>
+
+                    <p>
+                        Don't hit the walls or your
+                        own body.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- SCORE SUBMISSION RESULT MODAL -->
+
+    <div
+        class="score-result-modal hidden"
+        id="scoreResultModal">
+
+        <div class="score-result-card">
+
+            <div class="success-icon">
+
+                <span>✓</span>
+
+            </div>
+
+            <span
+                class="result-status"
+                id="scoreResultStatus">
+                SCORE SUBMITTED
+            </span>
+
+            <h2>
+                RUN COMPLETE
+            </h2>
+
+            <div class="result-game-name">
+                SNAKE RUSH
+            </div>
+
+            <div class="result-score-box">
+
+                <span>YOUR SCORE</span>
+
+                <strong id="submittedScore">
+                    0
+                </strong>
+
+            </div>
+
+            <p id="scoreResultMessage">
+                Your score has been added to the GAMECORE leaderboard.
+            </p>
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="viewLeaderboardBtn"
+                    class="result-primary-btn">
+                    VIEW LEADERBOARD
+                </button>
+
+                <button
+                    type="button"
+                    id="closeResultBtn"
+                    class="result-secondary-btn">
+                    DONE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="snake.js"></script>
+
+</body>
+</html>
